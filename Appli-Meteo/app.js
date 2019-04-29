@@ -65,11 +65,11 @@ const meteo = await fetch('https://api.openweathermap.org/data/2.5/weather?q=' +
 
 const region = await fetch('https://nominatim.openstreetmap.org/?format=json&addressdetails=1&q=' + ville + '&format=json&limit=1')
   .then(resultat => resultat.json())
-  .then(json     => json )
+  .then(json     => json)
 
 
 
-    console.log(region);
+    console.log(region[0].address.county);
 
 // 4. Afficher les informations sur la page.
 
@@ -176,9 +176,11 @@ else if (direction <= 360) {
 
 function displayRegionInfos(data){
 
-      const state = data.adress.state;
+      const state   = data[0].address.state;
+      const country = data[0].address.country;
 
-      document.querySelector('#country').textContent = state;
+      document.querySelector('#state').textContent   = state;
+      document.querySelector('#country').textContent  = country;
 
 }
 
