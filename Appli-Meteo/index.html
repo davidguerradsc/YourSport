@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>La météo de chez vous!</title>
+  <link rel="stylesheet" type="text/css" href="app.css">
+  <link rel="stylesheet"  href="http://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css">
+</head>
+<body>
+
+<section id="app">
+  <h1>
+    <span id="ville"></span>
+    <span class="tooltip">Saisissez une ville de votre choix partout dans le monde ...</span>
+  </h1>
+
+  <h3>
+    <span id="country"></span>
+  </h3>
+
+  <h3>
+
+   Longitude:&nbsp;<span id="longitude"></span>&nbsp; ;&nbsp; Latitude:&nbsp;<span id="latitude"></span>
+
+  </h3>
+
+  <i class="wi"></i>
+
+  <h2>
+    <span id="temperature"></span> C°<br />
+    (<span id="conditions"></span>)
+  </h2>
+
+    <h4>
+      Force du vent:&nbsp;<span id="vent"></span>&nbsp;Km/h&nbsp;-&nbsp;Direction:&nbsp;<span id="direction"></span>
+    </h4>
+
+</section>
+
+
+
+<script type="text/javascript" src="./app.js"></script>
+</body>
+</html>
