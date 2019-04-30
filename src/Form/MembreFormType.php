@@ -6,7 +6,7 @@ namespace App\Form;
 
 use App\Entity\Membre;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -20,80 +20,89 @@ class MembreFormType extends AbstractType
     {
         $builder
             # Prénom
-            ->add('prenom', TextType::class,[
-                'required'  => true,
-                'label'     => false,
-                'attr'      => [
-                    'placeholder' => "Saisissez votre prénom !"
+            ->add('prenom', TextType::class, [
+                'required' => true,
+                'label' => false,
+                'attr' => [
+                    'placeholder' => "Prenom",
+
                 ]
             ])
-
             # Nom
-            ->add('nom', TextType::class,[
-                'required'  => true,
-                'label'     => false,
-                'attr'      => [
-                    'placeholder' => "Saisissez votre nom !"
+            ->add('nom', TextType::class, [
+                'required' => true,
+                'label' => false,
+                'attr' => [
+                    'placeholder' => "Nom",
+
                 ]
             ])
-
             # Pseudo
-            ->add('pseudo', TextType::class,[
-                'required'  => true,
-                'label'     => false,
-                'attr'      => [
-                    'placeholder' => "Saisissez votre pseudo !"
+            ->add('pseudo', TextType::class, [
+                'required' => true,
+                'label' => false,
+                'attr' => [
+                    'placeholder' => "Pseudo",
                 ]
             ])
-
             # Email
-            ->add('pseudo', EmailType::class,[
-                'required'  => true,
-                'label'     => false,
-                'attr'      => [
-                    'placeholder' => "Saisissez votre email !"
+            ->add('email', EmailType::class, [
+                'required' => true,
+                'label' => false,
+                'attr' => [
+                    'placeholder' => "Adresse email",
                 ]
             ])
-
             # Password
-            ->add('password', PasswordType::class,[
-                'required'  => true,
-                'label'     => false,
-                'attr'      => [
-                    'placeholder' => "Saisissez votre mot de passe !"
+            ->add('password', PasswordType::class, [
+                'required' => true,
+                'label' => false,
+                'attr' => [
+                    'placeholder' => "Mot de passe",
+
                 ]
             ])
-
             # Date de naissance
-            ->add('date_de_naissance', BirthdayType::class,[
-                'required'  => true,
-                'label'     => false,
-                'attr'      => [
-                    'placeholder' => "Saisissez votre date de naissance !"
+            ->add('date_de_naissance', DateType::class, [
+                'required' => true,
+                'label' => false,
+                'attr' => [
+                    'placeholder' => "Saisissez votre date de naissance !",
+
                 ]
             ])
-
             # Ville
-            ->add('ville', TextType::class,[
-                'required'  => true,
-                'label'     => false,
-                'attr'      => [
-                    'placeholder' => "Saisissez votre département !"
+            ->add('ville', TextType::class, [
+                'required' => true,
+                'label' => false,
+                'attr' => [
+                    'placeholder' => "Ville",
+
                 ]
             ])
+            # Département
+            ->add('departement', TextType::class, [
+                'required' => true,
+                'label' => false,
+                'attr' => [
+                    'placeholder' => "Département",
 
-            # Bouton submit
-            ->add('submit', SubmitType::class,[
-                'label'     => 'S\'Inscrire'
+                ]
             ])
-        ;
+            # Bouton submit
+            ->add('submit', SubmitType::class, [
+                'label' => 'S\'Inscrire',
+                'attr' => [
+
+                ]
+            ]);
 
     }
 
     # Securite pour etre sur que seul une instance membre est passé
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefault('data_class',Membre::class);
+        $resolver->setDefault('data_class', Membre::class);
     }
 
 }

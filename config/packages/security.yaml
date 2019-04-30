@@ -2,6 +2,14 @@ security:
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
         in_memory: { memory: ~ }
+        membre_provider:
+            entity:
+                class: App\Entity\Membre
+                property: email
+
+    encoders:
+        App\Entity\Membre: bcrypt
+
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/

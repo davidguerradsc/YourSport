@@ -9,7 +9,6 @@ use App\Form\ConnexionFormType;
 use App\Form\MembreFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
@@ -22,8 +21,7 @@ class MembreController extends AbstractController
      * @Route("/inscription.html", name="membre_inscription")
      */
 
-    public function inscription(Request $request,
-                                UserPasswordEncoderInterface $encoder)
+    public function inscription(Request $request, UserPasswordEncoderInterface $encoder)
     {
         #Création d'un membre
         $membre = new Membre();
@@ -50,8 +48,8 @@ class MembreController extends AbstractController
             $this->addFlash('notice',
                 'Bravo, votre compte à bien été créé. Vous pouvez vous connecter !');
 
-            # Redirection
-            return $this->redirectToRoute('membre_connexion');
+//            # Redirection
+//            return $this->redirectToRoute('membre_connexion');
 
         }
 
