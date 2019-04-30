@@ -1,14 +1,14 @@
     <!-- Header -->
     <header id="header">
-        <h1><a href="">YourSport</a></h1>
+        <h1><a href="{{ path('accueil') }}">YourSport</a></h1>
         <nav id="nav">
             <ul>
-                <li><a href="index.html">Accueil</a></li>
+                <li><a href="{{ path('accueil') }}">Accueil</a></li>
                 <li>
                     <a href="#" class="icon fa-angle-down">Evénements</a>
                     <ul>
                         <li><a href="generic.html">Trouver un Evénement</a></li>
-                        <li><a href="contact.html">Créer votre Evénement</a></li>
+                        <li><a href="{{ path('evenement_createEvenement') }}">Créer votre Evénement</a></li>
                         <li><a href="elements.html">Mes Evénements</a></li>
                     </ul>
                 </li>
