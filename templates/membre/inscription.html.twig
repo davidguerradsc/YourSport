@@ -1,0 +1,21 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}
+    Inscription
+{% endblock %}
+
+{% block content %}
+    <div style="padding-top: 15%;">
+        <section id="main" class="container medium">
+            <header><h2>Inscrivez-vous</h2></header>
+            <div class="box">
+                {{ form_start(form, { attr: {novalidate: 'novalidate' }} ) }}
+
+                    {{ form_row(form.prenom) }}
+
+                {#{{ form_end(form) }}#}
+            </div>
+        </section>
+    </div>
+{% endblock %}
+
