@@ -65,11 +65,8 @@ class MembreFormType extends AbstractType
             # Date de naissance
             ->add('date_de_naissance', DateType::class, [
                 'required' => true,
-                'label' => false,
-                'attr' => [
-                    'placeholder' => "Saisissez votre date de naissance !",
-
-                ]
+                'label' => 'Date de Naissance :',
+                'widget' => 'single_text',
             ])
             # Ville
             ->add('ville', TextType::class, [
@@ -91,10 +88,7 @@ class MembreFormType extends AbstractType
             ])
             # Bouton submit
             ->add('submit', SubmitType::class, [
-                'label' => 'S\'Inscrire',
-                'attr' => [
-
-                ]
+                'label' => 'S\'inscrire',
             ]);
 
     }

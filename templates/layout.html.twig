@@ -3,26 +3,29 @@
 {% block stylesheets %}
 
     <!-- Main CSS -->
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}"/>
 
 {% endblock %}
 
 {% block body %}
-    <!-- Preload -->
+<body class="is-preload">
+    <div id="page-wrapper">
 
-    {% include 'components/_header.html.twig' %}
+        {% include 'components/_header.html.twig' %}
 
-    {% block content '' %}
+        {% block content '' %}
 
-    {% include 'components/_footer.html.twig' %}
+        {% include 'components/_footer.html.twig' %}
 
+    </div>
+</body>
 {% endblock %}
 
 {% block javascript %}
 
-<!-- Scripts -->
+    <!-- Scripts -->
 
-<script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/jquery.dropotron.min.js') }}"></script>
     <script src="{{ asset('js/jquery.scrollex.min.js') }}"></script>
     <script src="{{ asset('js/browser.min.js') }}"></script>

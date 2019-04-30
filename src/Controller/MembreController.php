@@ -48,8 +48,8 @@ class MembreController extends AbstractController
             $this->addFlash('notice',
                 'Bravo, votre compte à bien été créé. Vous pouvez vous connecter !');
 
-//            # Redirection
-//            return $this->redirectToRoute('membre_connexion');
+            # Redirection
+            return $this->redirectToRoute('membre_connexion');
 
         }
 
