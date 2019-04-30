@@ -28,7 +28,7 @@ class EvenementController extends AbstractController
         # Récupération du Membre créateur
         $membre = $this->getDoctrine()
             ->getRepository(Membre::class)
-            ->find(1);
+            ->find(3);
 
         # Affecter le membre connecté à l'Evénement
         $evenement->setMembre($membre);
@@ -54,7 +54,7 @@ class EvenementController extends AbstractController
             $this->addFlash('notice', 'Félicitations votre événement à bien été crée !');
 
             # 4. Redirection
-            return $this->redirectToRoute('', ['sport' => $evenement->getSport()->getSlug(),
+            return $this->redirectToRoute('accueil', ['sport' => $evenement->getSport()->getSlug(),
                                                       'slug' => $evenement->getSlug(),
                                                       'id'   => $evenement->getId()]);
         }

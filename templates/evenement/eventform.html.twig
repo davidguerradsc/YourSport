@@ -1,7 +1,7 @@
 {% extends "layout.html.twig" %}
 
 {% block title %}
-    Inscription
+    Créer Evénement
 {% endblock %}
 
 {% block content %}
@@ -9,10 +9,10 @@
     <section id="main" class="container medium">
 
         <header>
-            <h2>Inscrivez-vous</h2>
+            <h2>Créer votre Evénement</h2>
         </header>
 
-        <!-- THEME FORMULAIRE INSCRIPTION -->
+        <!-- THEME FORMULAIRE EVENEMENT -->
 
         <div class="box">
 
@@ -20,24 +20,12 @@
 
             <div class="row gtr-50 gtr-uniform">
 
-                <div class="col-6 col-12-mobilep">
-                    {{ form_row(form.prenom) }}
-                </div>
-
-                <div class="col-6 col-12-mobilep">
-                    {{ form_row(form.nom) }}
+                <div class="col-12">
+                    {{ form_row(form.sport) }}
                 </div>
 
                 <div class="col-12">
-                    {{ form_row(form.pseudo) }}
-                </div>
-
-                <div class="col-12">
-                    {{ form_row(form.email) }}
-                </div>
-
-                <div class="col-12">
-                    {{ form_row(form.password) }}
+                    {{ form_row(form.titre) }}
                 </div>
 
                 <div class="col-6 col-12-mobilep">
@@ -49,7 +37,23 @@
                 </div>
 
                 <div class="col-12">
-                    {{ form_row(form.date_de_naissance) }}
+                    {{ form_row(form.lieu) }}
+                </div>
+
+                <div class="col-12">
+                    {{ form_row(form.adresse) }}
+                </div>
+
+                <div class="col-12">
+                    {{ form_row(form.details) }}
+                </div>
+
+                <div class="col-12">
+                    {{ form_row(form.date) }}
+                </div>
+
+                <div class="col-12">
+                    {{ form_row(form.heure) }}
                 </div>
 
                 <div class="col-12">
@@ -68,4 +72,3 @@
     </section>
 
 {% endblock %}
-

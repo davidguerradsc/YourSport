@@ -3,8 +3,10 @@
 namespace App\Form;
 
     use App\Entity\Evenement;
+    use App\Entity\Sports;
+    use Symfony\Bridge\Doctrine\Form\Type\EntityType;
     use Symfony\Component\Form\AbstractType;
-    use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+    use Symfony\Component\Form\Extension\Core\Type\DateType;
     use Symfony\Component\Form\Extension\Core\Type\SubmitType;
     use Symfony\Component\Form\Extension\Core\Type\TextType;
     use Symfony\Component\Form\Extension\Core\Type\TimeType;
@@ -23,13 +25,14 @@ class EvenementFormType extends AbstractType
                     'placeholder' => "Titre de l'événement"
                 ]
             ])
-            # SLUG
-            ->add('slug', TextType::class, [
+
+            # SPORTS
+            ->add('sport', EntityType::class, [
+                'class' => Sports::class,
+                'choice_label' => 'nom',
                 'label' => false,
-                'attr' => [
-                    'placeholder' => "slug"
-                ]
             ])
+
             # VILLE
             ->add('ville', TextType::class,[
                 'required'  => true,
@@ -71,20 +74,16 @@ class EvenementFormType extends AbstractType
                 ]
             ])
             # DATE
-            ->add('date', DateTimeType::class,[
+            ->add('date', DateType::class,[
                 'required'  => true,
-                'label'     => false,
-                'attr'      => [
-                    'placeholder' => "Date de l'événement"
-                ]
+                'widget'    => 'single_text',
+                'label'     => 'Date de l\'événement :',
             ])
             # HEURE
             ->add('heure', TimeType::class,[
                 'required'  => true,
-                'label'     => false,
-                'attr'      => [
-                    'placeholder' => "Heure de l'événement"
-                ]
+                'widget'    => 'single_text',
+                'label'     => 'Heure de l\'événement :',
             ])
 
             # Bouton submit
