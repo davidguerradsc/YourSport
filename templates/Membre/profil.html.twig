@@ -1,0 +1,25 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}
+    Mon Profil
+{% endblock %}
+
+{% block content %}
+
+    <section id="main" class="container">
+
+        <header>
+            <h2>Mon Profil</h2>
+        </header>
+
+        <div class="box">
+            <h3>Nom</h3>
+            <p>{{ app.user.nom }}</p>
+
+            <h3>Prenom</h3>
+            <p>{{ app.user.prenom }}</p>
+        </div>
+
+    </section>
+
+{% endblock %}
