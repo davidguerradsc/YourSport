@@ -33,7 +33,7 @@ class ConnexionFormType extends AbstractType
     }
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefault(['data_class' => Membre::class,
+        $resolver->setDefaults(['data_class' => null,
         ]);
 
     }
