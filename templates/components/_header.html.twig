@@ -1,6 +1,14 @@
     <!-- Header -->
     <header id="header">
-        <h1><a href="{{ path('accueil') }}">YourSport</a></h1>
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+
+            <h1><a href="{{ path('accueil') }}">Yoursport &nbsp;|&nbsp; {{ app.user.prenom |capitalize }} &nbsp; {{ app.user.nom| capitalize }}</a></h1>
+
+        {% else %}
+            <h1><a href="{{ path('accueil') }}">YourSport</a></h1>
+        {% endif %}
+
+
         <nav id="nav">
             <ul>
                 <li><a href="{{ path('accueil') }}">Accueil</a></li>
