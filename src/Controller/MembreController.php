@@ -85,7 +85,6 @@ class MembreController extends AbstractController
      */
     public function deconnexion()
     {
-
     }
 
 }
