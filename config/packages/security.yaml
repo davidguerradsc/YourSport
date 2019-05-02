@@ -7,6 +7,8 @@ security:
                 class: App\Entity\Membre
                 property: email
 
+
+
     encoders:
         App\Entity\Membre: bcrypt
 
@@ -22,7 +24,15 @@ security:
             # http_basic: true
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
 
-            # form_login: true
+            form_login:
+                login_path: membre_connexion
+                check_path: membre_connexion
+                username_parameter: connexion_form[email]
+                password_parameter: connexion_form[password]
+            provider: membre_provider
+            logout:
+                path: /deconnexion.html
+                target: /
             # https://symfony.com/doc/current/security/form_login_setup.html
 
     # Easy way to control access for large sections of your site
