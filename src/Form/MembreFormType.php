@@ -89,6 +89,9 @@ class MembreFormType extends AbstractType
             # Bouton submit
             ->add('submit', SubmitType::class, [
                 'label' => 'S\'inscrire',
+                'attr' => [
+                    'class' => 'myButton'
+                ]
             ]);
 
     }

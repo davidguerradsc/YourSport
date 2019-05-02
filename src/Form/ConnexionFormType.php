@@ -15,29 +15,30 @@ class ConnexionFormType extends AbstractType
     public function buildForm(FormBuilderInterface $formbuilder, array $options)
     {
         $formbuilder
-            ->add('email', EmailType::class,[
+            ->add('email', EmailType::class, [
                 'label' => false,
-                'attr'  => ['placeholder' => 'Email']
-        ])
-
+                'attr' => ['placeholder' => 'Email']
+            ])
             ->add('password', PasswordType::class, [
-            'label' => false,
-            'attr'  => ['placeholder' => 'Mot de passe']
-        ])
-
+                'label' => false,
+                'attr' => ['placeholder' => 'Mot de passe']
+            ])
             ->add('submit',
-            SubmitType::class, [
-            'label' => 'connexion'
-        ]);
+                SubmitType::class, [
+                    'label' => 'Connexion',
+                    'attr' => [
+                        'class' => 'myButton'
+                    ]
+                ]);
 
     }
+
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(['data_class' => null,
         ]);
 
     }
-
 
 
 }
