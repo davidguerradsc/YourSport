@@ -5,10 +5,14 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{ asset('css/main.css') }}"/>
 
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
 {% endblock %}
 
 {% block body %}
-<body class="is-preload">
+    <body class="is-preload">
     <div id="page-wrapper">
 
         {% include 'components/_header.html.twig' %}
@@ -18,14 +22,14 @@
         {% include 'components/_footer.html.twig' %}
 
     </div>
-</body>
+    </body>
 {% endblock %}
 
 {% block javascript %}
 
-    <!-- Scripts -->
+<!-- Scripts -->
 
-    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src = "{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/jquery.dropotron.min.js') }}"></script>
     <script src="{{ asset('js/jquery.scrollex.min.js') }}"></script>
     <script src="{{ asset('js/browser.min.js') }}"></script>

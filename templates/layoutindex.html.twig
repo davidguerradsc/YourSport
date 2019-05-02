@@ -5,10 +5,14 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{ asset('css/main.css') }}"/>
 
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
 {% endblock %}
 
 {% block body %}
-<body class="landing is-preload">
+    <body class="landing is-preload">
     <div id="page-wrapper">
 
         {% include 'components/_headerIndex.html.twig' %}
@@ -17,7 +21,7 @@
 
         {% include 'components/_footer.html.twig' %}
     </div>
-</body>
+    </body>
 
 {% endblock %}
 

@@ -15,6 +15,13 @@
 
         <div class="box">
 
+            {% for message in app.flashes('notice') %}
+                <div class="alert alert-info">
+                    {{ message }}
+                </div>
+            {% endfor %}
+
+
             {{ form_start(form, { attr: {novalidate: 'novalidate' }} ) }}
 
             <div class="row gtr-50 gtr-uniform">
@@ -32,6 +39,8 @@
                         <li>{{ form_row(form.submit) }}</li>
                     </ul>
                 </div>
+
+                <p>Si vous n'êtes pas inscrit <i class="fas fa-arrow-right"></i> <a href="/inscription.html">Inscrivez-vous ici.</a></p>
 
             </div> <!-- ./gtr-50 -->
 

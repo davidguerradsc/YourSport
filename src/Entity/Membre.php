@@ -6,6 +6,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\MembreRepository")
@@ -21,41 +22,61 @@ class Membre implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=80)
+     * @Assert\NotBlank(message="Veuillez saisir votre nom")
+     * @Assert\Length( max="255", maxMessage="Limité à {{ limit }} caractères.")
      */
     private $nom;
 
     /**
      * @ORM\Column(type="string", length=80)
+     * @Assert\NotBlank(message="Veuillez saisir votre prénom")
+     * @Assert\Length( max="255", maxMessage="Limité à {{ limit }} caractères.")
      */
     private $prenom;
 
     /**
      * @ORM\Column(type="string", length=80)
+     * @Assert\NotBlank(message="Veuillez choisir un pseudo")
+     * @Assert\Length( max="255", maxMessage="Limité à {{ limit }} caractères.")
      */
     private $pseudo;
 
     /**
      * @ORM\Column(type="string", length=180)
+     * @Assert\NotBlank(message="Veuillez saisir votre adresse email")
+     * @Assert\Length( max="255", maxMessage="Limité à {{ limit }} caractères.")
+     *  @Assert\Regex(
+     *     pattern="/^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/",
+     *     message="Veuillez entrer une adresse mail valide"
+     * )
      */
     private $email;
 
     /**
      * @ORM\Column(type="string", length=64)
+     * @Assert\NotBlank(message="Veuillez saisir un mot de passe")
+     * @Assert\Length( max="255", maxMessage="Limité à {{ limit }} caractères.")
      */
     private $password;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Assert\Date
+     * @Assert\NotNull(message="Veuillez saisir votre date de naissance")
      */
     private $date_de_naissance;
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank(message="Veuillez saisir votre ville")
+     * @Assert\Length( max="255", maxMessage="Limité à {{ limit }} caractères.")
      */
     private $ville;
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank(message="Veuillez indiquez votre département")
+     * @Assert\Length( max="255", maxMessage="Limité à {{ limit }} caractères.")
      */
     private $departement;
 
