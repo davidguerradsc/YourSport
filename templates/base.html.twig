@@ -1,20 +1,29 @@
 <!DOCTYPE html>
-<html lang=fr>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>{% block title '' %}</title>
+<!--
+__    __  _____   _   _   _____         _____   _____   _____   _____   _____
+\ \  / / /  _  \ | | | | |  _  \       /  ___/ |  _  \ /  _  \ |  _  \ |_   _|
+ \ \/ /  | | | | | | | | | |_| |       | |___  | |_| | | | | | | |_| |   | |
+  \  /   | | | | | | | | |  _  /       \___  \ |  ___/ | | | | |  _  /   | |
+  / /    | |_| | | |_| | | | \ \        ___| | | |     | |_| | | | \ \   | |
+ /_/     \_____/ \_____/ |_|  \_\      /_____/ |_|     \_____/ |_|  \_\  |_|
 
-    {% block stylesheets '' %}
-</head>
-<body>
+-->
 
-{% block body '' %}
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>{% block title '' %} </title>
+        {% block stylesheets '' %}
+    </head>
+    <body>
 
-{% block javascripts '' %}
+    {% block body '' %}
 
-</body>
+    {% block javascript '' %}
+
+    </body>
 </html>
