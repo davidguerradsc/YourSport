@@ -14,10 +14,33 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
  */
 class EvenementRepository extends ServiceEntityRepository
 {
+
     public function __construct(RegistryInterface $registry)
     {
         parent::__construct($registry, Evenement::class);
     }
+
+
+    public function findEvent()
+    {
+        return $this->createQueryBuilder('a')
+            ->orderBy('a.id', 'desc')
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+
+    public function findLatest()
+    {
+        return $this->createQueryBuilder('a')
+            ->orderBy('a.id', 'desc')
+            ->setMaxResults(4)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
 
     // /**
     //  * @return Evenement[] Returns an array of Evenement objects
