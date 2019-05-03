@@ -26,19 +26,19 @@ class ContactMail
 
     private $renderer;
 
-    public function __construct(\Swift_Mailer $mailer, Environment $renerer)
+    public function __construct(\Swift_Mailer $mailer, Environment $renderer)
     {
         $this->mailer = $mailer;
-        $this->render = $this->renderer;
+        $this->renderer = $renderer;
     }
 
-    public function notify(Contact $conact){
+    public function notify(Contact $contact){
         $message = (new \Swift_Message('Contact YourSport'))
-            ->setFrom('YourSport@protonmail.com')
-            ->setTo('Yoursport@protonmail.com')
-            ->setReplyTo($conact->getEmail())
+            ->setFrom('yoursport78190@gmail.com')
+            ->setTo('yoursport78190@gmail.com')
+            ->setReplyTo($contact->getEmail())
             ->setBody($this->renderer->render('emails/contact.html.twig', [
-                'contact' => $conact
+                'contact' => $contact
             ]),'text/html');
         $this->mailer->send($message);
     }
