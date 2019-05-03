@@ -61,4 +61,38 @@ class EvenementController extends AbstractController
 
         return $this->render("evenement/eventform.html.twig", ['form' => $form->createView()]);
     }
+
+
+    /**
+     *
+     * @Route("/liste-des-evenements.html", name="evenement_list")
+     */
+    public function findEvent()
+    {
+
+        $repository = $this->getDoctrine()
+            ->getRepository(Evenement::class);
+
+        $evenements = $repository->findEvent();
+
+        return $this->render("evenement/findevent.html.twig",[
+            'evenements' => $evenements
+        ]);
+    }
+
+    /**
+     * @Route("/", name="evenement_latest")
+     */
+    public function findLatest()
+    {
+        $repository = $this->getDoctrine()
+            ->getRepository(Evenement::class);
+
+        $lastevents = $repository->findLatest();
+
+        return $this->render("default/index.html.twig",[
+            'lastevents' => $lastevents
+        ]);
+
+    }
 }
