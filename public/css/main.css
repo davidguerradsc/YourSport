@@ -3042,7 +3042,7 @@ body.landing #page-wrapper {
 #banner {
     background-attachment: scroll, fixed;
     background-color: #666;
-    background-image: url("images/TEST2.png"), url("../../images/TEST2.png");
+    background-image: url("images/TEST2.jpg"), url("../../images/TEST2.jpg");
     background-position: top left, center center;
     background-repeat: repeat, no-repeat;
     background-size: auto, cover;
