@@ -167,7 +167,7 @@ else if (direction <= 360) {
 
 // Affichage du fond d'ecran en fonction des conditions météo.
 
-     document.body.className = conditions.toLowerCase();
+     // document.body.className = conditions.toLowerCase();
 
 
 
