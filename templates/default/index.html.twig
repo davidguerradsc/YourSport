@@ -1,0 +1,131 @@
+{% extends "layoutindex.html.twig" %}
+
+{% block title %}
+   YourSport - Accueil
+{% endblock %}
+
+
+{% block content %}
+
+
+    <!-- Main -->
+    <section id="main" class="container">
+
+        <section class="box special">
+            <header class="major">
+                <h2>Introducing the ultimate mobile app
+                    <br />
+                    for doing stuff with your phone</h2>
+                <p>Blandit varius ut praesent nascetur eu penatibus nisi risus faucibus nunc ornare<br />
+                    adipiscing nunc adipiscing. Condimentum turpis massa.</p>
+            </header>
+            <span class="image featured"><img src="images/TEST.png" alt="" /></span>
+        </section>
+
+
+        <div class="row">
+            <div class="col-6 col-12-narrower">
+
+                <section class="box special">
+                    <span class="image featured"><img src="images/YourSport_Default_Cycle.webp" alt="" /></span>
+                    <h3>Sed lorem adipiscing</h3>
+                    <p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim
+                        rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+                    <ul class="actions special">
+                        <li><a href="#" class="button alt">Learn More</a></li>
+                    </ul>
+                </section>
+
+            </div>
+            <div class="col-6 col-12-narrower">
+
+                <section class="box special">
+                    <span class="image featured"><img src="images/YourSport_Default_Foot.webp" alt="" /></span>
+                    <h3>Accumsan integer</h3>
+                    <p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim
+                        rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+                    <ul class="actions special">
+                        <li><a href="#" class="button alt">Learn More</a></li>
+                    </ul>
+                </section>
+
+            </div>
+
+            <div class="col-6 col-12-narrower">
+
+                <section class="box special">
+                    <span class="image featured"><img src="images/YourSport_Default_Cycle.webp" alt="" /></span>
+                    <h3>Accumsan integer</h3>
+                    <p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim
+                        rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+                    <ul class="actions special">
+                        <li><a href="#" class="button alt">Learn More</a></li>
+                    </ul>
+                </section>
+
+            </div>
+
+            <div class="col-6 col-12-narrower">
+
+                <section class="box special">
+                    <span class="image featured"><img src="images/YourSport_Default_Foot.webp" alt="" /></span>
+                    <h3>Accumsan integer</h3>
+                    <p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim
+                        rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+                    <ul class="actions special">
+                        <li><a href="#" class="button alt">Learn More</a></li>
+                    </ul>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Widget Météo -->
+
+        <section id="cta">
+
+            <div id="app">
+
+                <div class="tooltip">
+
+                    <h1 class="tool">
+
+                        <span id="ville"></span>
+
+                        <span class="tooltiptext">Les conditions météorologique du monde entier.</span>
+
+                    </h1>
+
+                    <p>Saisissez une ville de votre choix partout dans le monde ...</p>
+
+                </div><!-- End tooltip -->
+
+                <h3 class="weather">
+                    <span id="state" ></span>,&nbsp;<span id="country"></span>
+                </h3>
+
+                <h3 class="weather">
+
+                    Longitude:&nbsp;<span id="longitude" class="weather"></span>&nbsp; ; &nbsp; Latitude:&nbsp;<span id="latitude"></span>
+
+                </h3>
+
+                <i class="wi"></i>
+
+                <h2>
+                    <span id="temperature" class="weather"></span> <span class="weather">C°</span><br />
+                    <span class="weather">(<span id="conditions"></span>)</span>
+                </h2>
+
+                <h4 class="weather">
+                    Force du vent:&nbsp;<span id="vent"></span>&nbsp;Km/h&nbsp; - &nbsp;Direction:&nbsp;<span id="direction"></span>
+                </h4>
+
+            </div><!-- End App -->
+
+        </section><!-- End widget -->
+
+    </section>
+
+
+{% endblock %}

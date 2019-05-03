@@ -1,0 +1,46 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}"/>
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!-- Weather Icons -->
+
+    <link rel="stylesheet"  href="http://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css">
+
+{% endblock %}
+
+{% block body %}
+    <body class="landing is-preload">
+    <div id="page-wrapper">
+
+        {% include 'components/_headerIndex.html.twig' %}
+
+        {% block content '' %}
+
+        {% include 'components/_footer.html.twig' %}
+    </div>
+    </body>
+
+{% endblock %}
+
+{% block javascript %}
+
+<!-- Scripts -->
+
+    <script src = "{{ asset('js/jquery.min.js') }}"></script>
+    <script src = "{{ asset('js/jquery.dropotron.min.js') }}"></script>
+    <script src = "{{ asset('js/jquery.scrollex.min.js') }}"></script>
+    <script src = "{{ asset('js/browser.min.js') }}"></script>
+    <script src = "{{ asset('js/breakpoints.min.js') }}"></script>
+    <script src = "{{ asset('js/util.js') }}"></script>
+    <script src = "{{ asset('js/main.js') }}"></script>
+    <script src = "{{ asset('js/app.js') }}"></script>
+{% endblock %}
+
+

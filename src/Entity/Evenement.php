@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\EvenementRepository")
@@ -20,6 +21,8 @@ class Evenement
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Veuillez saisir un titre")
+     * @Assert\Length( max="255", maxMessage="Votre titre ne doit pas dépasser {{ limit }} caractères.")
      */
     private $titre;
 
@@ -30,21 +33,24 @@ class Evenement
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank(message="Veuillez indiquer votre ville.")
      */
     private $ville;
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank(message="Vous devez indiquer votre département.")
      */
     private $departement;
 
     /**
      * @ORM\Column(type="string", length=120)
+     * @Assert\NotBlank(message="Veuillez indiquer le lieu de l'événement.")
      */
     private $lieu;
 
     /**
-     * @ORM\Column(type="string", length=150)
+     * @ORM\Column(type="string", length=150, nullable=true)
      */
     private $adresse;
 
@@ -55,11 +61,13 @@ class Evenement
 
     /**
      * @ORM\Column(type="datetime")
+     * @Assert\NotBlank(message="Veuillez indiquer la date de l'événement.")
      */
     private $date;
 
     /**
      * @ORM\Column(type="time")
+     * @Assert\NotBlank(message="Veuillez indiquer l'heure de l'événement.")
      */
     private $heure;
 

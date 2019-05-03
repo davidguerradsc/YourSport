@@ -1,20 +1,34 @@
 <!DOCTYPE html>
-<html lang=fr>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>{% block title '' %}</title>
+<!--
+__    __  _____   _   _   _____         _____   _____   _____   _____   _____
+\ \  / / /  _  \ | | | | |  _  \       /  ___/ |  _  \ /  _  \ |  _  \ |_   _|
+ \ \/ /  | | | | | | | | | |_| |       | |___  | |_| | | | | | | |_| |   | |
+  \  /   | | | | | | | | |  _  /       \___  \ |  ___/ | | | | |  _  /   | |
+  / /    | |_| | | |_| | | | \ \        ___| | | |     | |_| | | | \ \   | |
+ /_/     \_____/ \_____/ |_|  \_\      /_____/ |_|     \_____/ |_|  \_\  |_|
 
-    {% block stylesheets '' %}
-</head>
-<body>
+-->
 
-{% block body '' %}
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content="Live your sport!"/>
 
-{% block javascripts '' %}
+        <!-- Weather Icons -->
+        <link rel="stylesheet"  href="http://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css">
 
-</body>
+        <title>{% block title '' %} </title>
+        {% block stylesheets '' %}
+    </head>
+    <body>
+
+    {% block body '' %}
+
+    {% block javascript '' %}
+
+    </body>
 </html>

@@ -5,11 +5,13 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\MembreRepository")
  */
-class Membre
+class Membre implements UserInterface
 {
     /**
      * @ORM\Id()
@@ -20,41 +22,61 @@ class Membre
 
     /**
      * @ORM\Column(type="string", length=80)
+     * @Assert\NotBlank(message="Veuillez saisir votre nom")
+     * @Assert\Length( max="255", maxMessage="Limité à {{ limit }} caractères.")
      */
     private $nom;
 
     /**
      * @ORM\Column(type="string", length=80)
+     * @Assert\NotBlank(message="Veuillez saisir votre prénom")
+     * @Assert\Length( max="255", maxMessage="Limité à {{ limit }} caractères.")
      */
     private $prenom;
 
     /**
      * @ORM\Column(type="string", length=80)
+     * @Assert\NotBlank(message="Veuillez choisir un pseudo")
+     * @Assert\Length( max="255", maxMessage="Limité à {{ limit }} caractères.")
      */
     private $pseudo;
 
     /**
      * @ORM\Column(type="string", length=180)
+     * @Assert\NotBlank(message="Veuillez saisir votre adresse email")
+     * @Assert\Length( max="255", maxMessage="Limité à {{ limit }} caractères.")
+     *  @Assert\Regex(
+     *     pattern="/^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/",
+     *     message="Veuillez entrer une adresse mail valide"
+     * )
      */
     private $email;
 
     /**
      * @ORM\Column(type="string", length=64)
+     * @Assert\NotBlank(message="Veuillez saisir un mot de passe")
+     * @Assert\Length( max="255", maxMessage="Limité à {{ limit }} caractères.")
      */
     private $password;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Assert\Date
+     * @Assert\NotNull(message="Veuillez saisir votre date de naissance")
      */
     private $date_de_naissance;
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank(message="Veuillez saisir votre ville")
+     * @Assert\Length( max="255", maxMessage="Limité à {{ limit }} caractères.")
      */
     private $ville;
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank(message="Veuillez indiquez votre département")
+     * @Assert\Length( max="255", maxMessage="Limité à {{ limit }} caractères.")
      */
     private $departement;
 
@@ -77,6 +99,7 @@ class Membre
     {
         $this->evenements = new ArrayCollection();
         $this->participation = new ArrayCollection();
+        $this->date_inscription = new \DateTime();
     }
 
     public function getId(): ?int
@@ -249,5 +272,56 @@ class Membre
         }
 
         return $this;
+    }
+
+    /**
+     * Returns the roles granted to the user.
+     *
+     *     public function getRoles()
+     *     {
+     *         return ['ROLE_USER'];
+     *     }
+     *
+     * Alternatively, the roles might be stored on a ``roles`` property,
+     * and populated in any number of different ways when the user object
+     * is created.
+     *
+     * @return (Role|string)[] The user roles
+     */
+    public function getRoles()
+    {
+        return ['ROLE_MEMBRE'];
+    }
+
+    /**
+     * Returns the salt that was originally used to encode the password.
+     *
+     * This can return null if the password was not encoded using a salt.
+     *
+     * @return string|null The salt
+     */
+    public function getSalt()
+    {
+        return null;
+    }
+
+    /**
+     * Returns the username used to authenticate the user.
+     *
+     * @return string The username
+     */
+    public function getUsername()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Removes sensitive data from the user.
+     *
+     * This is important if, at any given point, sensitive information like
+     * the plain-text password is stored on this object.
+     */
+    public function eraseCredentials()
+    {
     }
 }

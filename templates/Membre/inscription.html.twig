@@ -1,0 +1,71 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}
+   YourSort - Inscription
+{% endblock %}
+
+{% block content %}
+
+    <section id="main" class="container medium">
+
+        <header>
+            <h2>Inscrivez-vous</h2>
+        </header>
+
+        <!-- THEME FORMULAIRE INSCRIPTION -->
+
+        <div class="box">
+
+            {{ form_start(form, { attr: {novalidate: 'novalidate' }} ) }}
+
+            <div class="row gtr-50 gtr-uniform">
+
+                <div class="col-6 col-12-mobilep">
+                    {{ form_row(form.prenom) }}
+                </div>
+
+                <div class="col-6 col-12-mobilep">
+                    {{ form_row(form.nom) }}
+                </div>
+
+                <div class="col-12">
+                    {{ form_row(form.pseudo) }}
+                </div>
+
+                <div class="col-12">
+                    {{ form_row(form.email) }}
+                </div>
+
+                <div class="col-12">
+                    {{ form_row(form.password) }}
+                </div>
+
+                <div class="col-6 col-12-mobilep">
+                    {{ form_row(form.ville) }}
+                </div>
+
+                <div class="col-6 col-12-mobilep">
+                    {{ form_row(form.departement) }}
+                </div>
+
+                <div class="col-12">
+                    {{ form_row(form.date_de_naissance) }}
+                </div>
+
+                <div class="col-12">
+                    <ul class="actions special">
+                        <li>{{ form_row(form.submit) }}</li>
+                    </ul>
+                </div>
+
+
+            </div> <!-- ./gtr-50 -->
+
+            {{ form_end(form) }}
+
+        </div> <!-- ./box -->
+
+    </section>
+
+{% endblock %}
+
