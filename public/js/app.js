@@ -175,7 +175,7 @@ else if (direction <= 360) {
 
 
 
-     document.body.className = conditions.toLowerCase();
+     //document.body.className = conditions.toLowerCase();
 
 
 
