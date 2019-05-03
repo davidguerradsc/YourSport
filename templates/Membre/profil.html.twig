@@ -13,12 +13,58 @@
         </header>
 
         <div class="box">
-            <h3>Nom</h3>
-            <p>{{ app.user.nom }}</p>
 
-            <h3>Prenom</h3>
-            <p>{{ app.user.prenom }}</p>
-        </div>
+            <div class="row">
+
+                <div class="col-6 col-12-narrower">
+                    <h4><em>Nom :</em></h4>
+                    <p>{{ app.user.nom }}</p>
+                </div>
+
+                <div class="col-6 col-12-narrower">
+                    <h4><em>Prenom :</em></h4>
+                    <p>{{ app.user.prenom }}</p>
+                </div>
+
+                <div class="col-12">
+                    <h4><em>Pseudo :</em></h4>
+                    <p>{{ app.user.pseudo }}</p>
+                </div>
+
+                <div class="col-12">
+                    <h4><em>Adresse Email :</em></h4>
+                    <p>{{ app.user.email }}</p>
+                </div>
+
+                <div class="col-12">
+                    <h4><em>Mot de passe :</em></h4>
+                    <p>{{ app.user.password }}</p>
+                </div>
+
+                {#<div class="col-12">#}
+                    {#<h4><em>Date de Naissance</em></h4>#}
+                    {#<p>{{ app.user.date_de_naissance }}</p>#}
+                {#</div>#}
+
+                <div class="col-6 col-12-narrower">
+                    <h4><em>Ville :</em></h4>
+                    <p>{{ app.user.ville }}</p>
+                </div>
+
+                <div class="col-6 col-12-narrower">
+                    <h4><em>Département :</em></h4>
+                    <p>{{ app.user.departement }}</p>
+                </div>
+
+                {#<div class="col-12">#}
+                    {#<h4><em>Date d'inscription :</em></h4>#}
+                    {#<p>{{ app.user.date_inscription }}</p>#}
+                {#</div>#}
+
+
+            </div> <!-- ./row -->
+
+        </div> <!-- ./box -->
 
     </section>
 
