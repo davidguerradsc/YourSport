@@ -20,6 +20,14 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     vertical-align: baseline;
 }
 
+.editprofil a{
+    border-bottom: none;
+}
+
+.editprofil a:hover{
+    cursor: pointer;
+}
+
 .myButton {
     color: rgb(255, 255, 255);
     font-size: 18px;
@@ -38,11 +46,13 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 
 .myButton:hover {
-    background: #1C6EA4;
+    background: #e89980;
+    border: 2px solid #e89980;
 }
 
 .myButton:active {
-    background: #144E75;
+    background: #e89980;
+    border: 2px solid #e89980;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
