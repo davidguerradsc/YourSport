@@ -1,0 +1,74 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}
+    Créer Evénement
+{% endblock %}
+
+{% block content %}
+
+    <section id="main" class="container medium">
+
+        <header>
+            <h2>Créer votre Evénement</h2>
+        </header>
+
+        <!-- THEME FORMULAIRE EVENEMENT -->
+
+        <div class="box">
+
+            {{ form_start(form, { attr: {novalidate: 'novalidate' }} ) }}
+
+            <div class="row gtr-50 gtr-uniform">
+
+                <div class="col-12">
+                    {{ form_row(form.sport) }}
+                </div>
+
+                <div class="col-12">
+                    {{ form_row(form.titre) }}
+                </div>
+
+                <div class="col-6 col-12-mobilep">
+                    {{ form_row(form.ville) }}
+                </div>
+
+                <div class="col-6 col-12-mobilep">
+                    {{ form_row(form.departement) }}
+                </div>
+
+                <div class="col-12">
+                    {{ form_row(form.lieu) }}
+                </div>
+
+                <div class="col-12">
+                    {{ form_row(form.adresse) }}
+                </div>
+
+                <div class="col-12">
+                    {{ form_row(form.details) }}
+                </div>
+
+                <div class="col-4 col-12-mobilep">
+                    {{ form_row(form.date) }}
+                </div>
+
+                <div class="col-4 col-12-mobilep">
+                    {{ form_row(form.heure) }}
+                </div>
+
+                <div class="col-12">
+                    <ul class="actions special">
+                        <li>{{ form_row(form.submit) }}</li>
+                    </ul>
+                </div>
+
+
+            </div> <!-- ./gtr-50 -->
+
+            {{ form_end(form) }}
+
+        </div> <!-- ./box -->
+
+    </section>
+
+{% endblock %}

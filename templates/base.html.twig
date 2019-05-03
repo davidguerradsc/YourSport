@@ -1,12 +1,29 @@
 <!DOCTYPE html>
+
+<!--
+__    __  _____   _   _   _____         _____   _____   _____   _____   _____
+\ \  / / /  _  \ | | | | |  _  \       /  ___/ |  _  \ /  _  \ |  _  \ |_   _|
+ \ \/ /  | | | | | | | | | |_| |       | |___  | |_| | | | | | | |_| |   | |
+  \  /   | | | | | | | | |  _  /       \___  \ |  ___/ | | | | |  _  /   | |
+  / /    | |_| | | |_| | | | \ \        ___| | | |     | |_| | | | \ \   | |
+ /_/     \_____/ \_____/ |_|  \_\      /_____/ |_|     \_____/ |_|  \_\  |_|
+
+-->
+
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>{% block title '' %} </title>
+        {% block stylesheets '' %}
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+
+    {% block body '' %}
+
+    {% block javascript '' %}
+
     </body>
 </html>
