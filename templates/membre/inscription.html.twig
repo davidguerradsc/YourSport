@@ -1,28 +1,36 @@
 {% extends "layout.html.twig" %}
 
 {% block title %}
-   YourSport - Connexion
+    Inscription
 {% endblock %}
 
 {% block content %}
+
     <section id="main" class="container medium">
 
         <header>
-            <h2>Connectez-vous</h2>
+            <h2>Inscrivez-vous</h2>
         </header>
 
-        <div class="box">
+        <!-- THEME FORMULAIRE INSCRIPTION -->
 
-            {% for message in app.flashes('notice') %}
-                <div class="alert alert-info">
-                    {{ message }}
-                    <br>
-                </div>
-            {% endfor %}
+        <div class="box">
 
             {{ form_start(form, { attr: {novalidate: 'novalidate' }} ) }}
 
             <div class="row gtr-50 gtr-uniform">
+
+                <div class="col-6 col-12-mobilep">
+                    {{ form_row(form.prenom) }}
+                </div>
+
+                <div class="col-6 col-12-mobilep">
+                    {{ form_row(form.nom) }}
+                </div>
+
+                <div class="col-12">
+                    {{ form_row(form.pseudo) }}
+                </div>
 
                 <div class="col-12">
                     {{ form_row(form.email) }}
@@ -32,13 +40,24 @@
                     {{ form_row(form.password) }}
                 </div>
 
+                <div class="col-6 col-12-mobilep">
+                    {{ form_row(form.ville) }}
+                </div>
+
+                <div class="col-6 col-12-mobilep">
+                    {{ form_row(form.departement) }}
+                </div>
+
+                <div class="col-12">
+                    {{ form_row(form.date_de_naissance) }}
+                </div>
+
                 <div class="col-12">
                     <ul class="actions special">
                         <li>{{ form_row(form.submit) }}</li>
                     </ul>
                 </div>
 
-                <p>Si vous n'êtes pas inscrit <i class="fas fa-arrow-right"></i> <a href="/inscription.html">Inscrivez-vous ici.</a></p>
 
             </div> <!-- ./gtr-50 -->
 
@@ -47,4 +66,6 @@
         </div> <!-- ./box -->
 
     </section>
+
 {% endblock %}
+
