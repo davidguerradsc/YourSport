@@ -64,7 +64,7 @@ class EvenementController extends AbstractController
 
 
     /**
-     *
+     * Pour lister tous les evenements
      * @Route("/liste-des-evenements.html", name="evenement_list")
      */
     public function findEvent()
