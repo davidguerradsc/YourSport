@@ -11,15 +11,14 @@
             <h2>Connectez-vous</h2>
         </header>
 
-            
         <div class="box">
 
             {% for message in app.flashes('notice') %}
                 <div class="alert alert-info">
                     {{ message }}
+                    <br>
                 </div>
             {% endfor %}
-
 
             {{ form_start(form, { attr: {novalidate: 'novalidate' }} ) }}
 
