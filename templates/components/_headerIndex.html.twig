@@ -13,11 +13,11 @@
                 <li>
                     <a href="#" class="icon fa-angle-down">Sports</a>
                     <ul>
-                        <li><a href="#">Football</a></li>
-                        <li><a href="#">Basketball</a></li>
-                        <li><a href="#">Vélo</a></li>
-                        <li><a href="#">Surf</a></li>
-                        <li><a href="#">Glisse Urbaine</a></li>
+                        {% for sports in sports %}
+                        <li><a href="{{ path('default_listsport',{
+                                'slug' : sports.slug
+                            }) }}">{{ sports.nom }}</a></li>
+                        {% endfor %}
                     </ul>
                 </li>
 

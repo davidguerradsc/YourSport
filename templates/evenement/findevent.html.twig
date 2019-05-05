@@ -2,7 +2,7 @@
 
 {% block title %}
 
-    Trouver un Evénement
+    Liste des événements
 
 {% endblock %}
 
@@ -20,11 +20,15 @@
             <div class="col-4 col-12-narrower">
 
                 <section class="box special">
-                    <span class="image featured"><img src="images/YourSport_Default_Cycle.webp" alt="" /></span>
+                    <span class="image featured"><img src="images/YourSport_Default_Cycle.webp" alt="{{ evenement.titre }}" /></span>
                     <h3>{{ evenement.titre }}</h3>
                     <p>{{ evenement.details }}</p>
                     <ul class="actions special">
-                        <li><a href="#" class="button alt">Learn More</a></li>
+                        <li><a href="{{ path('evenement_evenement',{
+                                'sports'    : evenement.sport.slug,
+                                'slug'      : evenement.slug,
+                                'id'        : evenement.id
+                            }) }}" class="button alt">Lire la suite</a></li>
                     </ul>
                 </section>
 
