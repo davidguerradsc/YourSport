@@ -1,8 +1,5 @@
 {% extends "base.html.twig" %}
 
-{% set sports = sports_repository.findAll() %}
-
-
 {% block stylesheets %}
 
     <!-- Main CSS -->
@@ -39,5 +36,4 @@
     <script src="{{ asset('js/breakpoints.min.js') }}"></script>
     <script src="{{ asset('js/util.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
-
 {% endblock %}

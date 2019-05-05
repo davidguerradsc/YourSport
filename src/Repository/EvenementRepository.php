@@ -21,9 +21,6 @@ class EvenementRepository extends ServiceEntityRepository
     }
 
 
-    /*
-     * Affichage de tous les évenements trié par creation (id) en ordre descandant
-     */
     public function findEvent()
     {
         return $this->createQueryBuilder('a')
@@ -34,10 +31,6 @@ class EvenementRepository extends ServiceEntityRepository
     }
 
 
-    /*
-     * fonction pour afficher les 4 derniers événements
-     * Utilisé dans la page d'accueil
-     */
     public function findLatest()
     {
         return $this->createQueryBuilder('a')

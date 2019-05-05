@@ -28,7 +28,7 @@ class EvenementController extends AbstractController
         # Récupération du Membre créateur
         $membre = $this->getDoctrine()
             ->getRepository(Membre::class)
-            ->find($this->getUser()->getID());
+            ->find(3);
 
         # Affecter le membre connecté à l'Evénement
         $evenement->setMembre($membre);
@@ -93,32 +93,6 @@ class EvenementController extends AbstractController
         return $this->render("default/index.html.twig",[
             'lastevents' => $lastevents
         ]);
-
-    }
-
-    /**
-     * Fonction permettant d'afficher un événement
-     * @Route("/{sports}/{slug}_{id<\d+>}.html",
-     * name="evenement_evenement")
-     */
-    public function evenement($id)
-    {
-
-        /*
-         * Récup de l'ID passé en parametre dans la route
-         */
-
-        $evenement = $this->getDoctrine()
-            ->getRepository(Evenement::class)
-            ->find($id);
-
-        /*
-         * On passe à la vue
-         */
-        return $this->render("evenement/evenement.html.twig",[
-            'evenement' => $evenement
-        ]);
-
 
     }
 }

@@ -1,8 +1,5 @@
 {% extends "base.html.twig" %}
 
-{% set sports = sports_repository.findAll() %}
-
-
 {% block stylesheets %}
 
     <!-- Main CSS -->
@@ -23,7 +20,6 @@
         {% block content '' %}
 
         {% include 'components/_footer.html.twig' %}
-
     </div>
     </body>
 
