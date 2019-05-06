@@ -82,23 +82,27 @@
 
         <!-- Widget Météo -->
 
-        <section id="cta">
+        <!-- Widget Météo -->
 
-            <div id="app">
+        <section id="app">
 
-                <div class="tooltip">
+            <div id="meteo">
 
-                    <h1 class="tool">
+               <!-- <div class="tooltip"> -->
+
+                    <h3 class="tool">
 
                         <span id="ville"></span>
 
-                        <span class="tooltiptext">Les conditions météorologique du monde entier.</span>
+                      <!--  <span class="tooltiptext">Saisissez une ville de votre choix partout dans le monde  ...</span> -->
 
-                    </h1>
+                    </h3>
 
-                    <p>Saisissez une ville de votre choix partout dans le monde ...</p>
+                   <p class="info">
+                       Saisissez une ville de votre choix partout dans le monde ...
+                   </p>
 
-                </div><!-- End tooltip -->
+            <!--    </div> End tooltip -->
 
                 <h3 class="weather">
                     <span id="state" ></span>,&nbsp;<span id="country"></span>
@@ -106,22 +110,22 @@
 
                 <h3 class="weather">
 
-                    Longitude:&nbsp;<span id="longitude" class="weather"></span>&nbsp; ; &nbsp; Latitude:&nbsp;<span id="latitude"></span>
+                    Longitude:&nbsp;<span id="longitude"></span>&nbsp; ; &nbsp; Latitude:&nbsp;<span id="latitude"></span>
 
                 </h3>
 
                 <i class="wi"></i>
 
-                <h2>
+                <h3 class="weather">
                     <span id="temperature" class="weather"></span> <span class="weather">C°</span><br />
-                    <span class="weather">(<span id="conditions"></span>)</span>
-                </h2>
+                    (<span id="conditions"></span>)
+                </h3>
 
                 <h4 class="weather">
                     Force du vent:&nbsp;<span id="vent"></span>&nbsp;Km/h&nbsp; - &nbsp;Direction:&nbsp;<span id="direction"></span>
                 </h4>
 
-            </div><!-- End App -->
+            </div>
 
         </section><!-- End widget -->
 
