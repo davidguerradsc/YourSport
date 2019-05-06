@@ -20,9 +20,14 @@
             <div class="col-4 col-12-narrower">
 
                 <section class="box special">
-                    <span class="image featured"><img src="images/YourSport_Default_Cycle.webp" alt="{{ evenement.titre }}" /></span>
+                    <span class="image featured"><img src="{{ asset('images/' ~ evenement.sport.image) }}" alt="{{ evenement.titre }}" /></span>
+
                     <h3>{{ evenement.titre }}</h3>
-                    <p>{{ evenement.details }}</p>
+
+                    <p class="eventbox">{{ evenement.ville }}</p>
+
+                    <p class="eventbox">Le {{ evenement.date | date('d/m/Y')}} à {{ evenement.heure | date('H:i:s') }}</p>
+
                     <ul class="actions special">
                         <li><a href="{{ path('evenement_evenement',{
                                 'sports'    : evenement.sport.slug,

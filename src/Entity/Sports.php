@@ -33,6 +33,11 @@ class Sports
      */
     private $evenements;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $image;
+
     public function __construct()
     {
         $this->evenements = new ArrayCollection();
@@ -94,6 +99,18 @@ class Sports
                 $evenement->setSport(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): self
+    {
+        $this->image = $image;
 
         return $this;
     }
