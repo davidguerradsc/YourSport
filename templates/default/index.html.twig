@@ -27,7 +27,7 @@
             <div class="col-6 col-12-narrower">
 
                 <section class="box special">
-                    <span class="image featured"><img src="images/YourSport_Default_Cycle.webp" alt="{{ lastevent.titre }}" /></span>
+                    <span class="image featured"><img src="{{ asset('images/' ~ lastevent.sport.image) }}" alt="{{ lastevent.titre }}" /></span>
                     <h3>{{ lastevent.titre }}</h3>
                     <p>{{ lastevent.details }}</p>
                     <ul class="actions special">
