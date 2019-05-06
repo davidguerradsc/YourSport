@@ -99,12 +99,12 @@ function displayWeatherInfos(data){
 
 
 
-// Convertion de la forçe du vent de métre/seconde à kilométre/heure.
+// Convertion de la forçe du vent.
 
       vent = vent * 3.6;
 
 
-// Les données concernant le vent sont en degrés, convertissons les en "axes boussole".
+// Convertion de la direction du vent.
 
 if (direction < 23) {
 
@@ -171,11 +171,11 @@ else if (direction <= 360) {
 
       document.querySelector('i.wi').className = weatherIcons [conditions];
 
+
 // Affichage du fond d'ecran en fonction des conditions météo.
 
+    document.getElementById('meteo').className = conditions.toLowerCase()
 
-
-     //document.body.className = conditions.toLowerCase();
 
 
 

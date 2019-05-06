@@ -18,11 +18,17 @@ __    __  _____   _   _   _____         _____   _____   _____   _____   _____
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="description" content="Live your sport!"/>
 
+        {% block stylesheets %}
         <!-- Weather Icons -->
         <link rel="stylesheet"  href="http://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css">
+        {% endblock %}
+     <!--   <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" /> -->
+        <title>
+            {% block title %}
+                {% if title is defined %}{{title}}{% else %}Title{% endif %} | YourSport
+            {% endblock %}
+        </title>
 
-        <title>{% block title '' %} </title>
-        {% block stylesheets '' %}
     </head>
     <body>
 
