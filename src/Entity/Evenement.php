@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use phpDocumentor\Reflection\Types\Integer;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -38,8 +39,16 @@ class Evenement
     private $ville;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="integer", length=50)
      * @Assert\NotBlank(message="Vous devez indiquer votre département.")
+     * @Assert\Type(
+     *     type="integer",
+     *     message="Vous devez indiquer votre département en chiffre uniquement. ex: 75, 78, 95 .."
+     * )
+     * @Assert\Regex(
+     *     pattern="/^[0-9]{2}$/",
+     *     message="Vous devez indiquer votre département en chiffre uniquement. ex: 75, 78, 95 .."
+     * )
      */
     private $departement;
 
@@ -134,12 +143,12 @@ class Evenement
         return $this;
     }
 
-    public function getDepartement(): ?string
+    public function getDepartement(): ?int
     {
         return $this->departement;
     }
 
-    public function setDepartement(string $departement): self
+    public function setDepartement(int $departement): self
     {
         $this->departement = $departement;
 

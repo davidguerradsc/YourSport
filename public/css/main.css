@@ -3955,6 +3955,10 @@ body.landing #main {
     margin-bottom: 20px;
 }
 
+/* <p> pour les evenement */
+.eventbox{
+    margin: 0 0 0.5em 0;
+}
 
 /* Font WeatherIcons */
 
