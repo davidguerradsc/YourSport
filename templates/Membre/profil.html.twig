@@ -14,41 +14,47 @@
 
         <div class="box">
 
+            {% for message in app.flashes('notice') %}
+                <div class="messageFlash">
+                    {{ message }}
+                </div>
+            {% endfor %}
+
             <div class="row">
 
                 <div class="col-6 col-12-narrower">
                     <h4><em>Nom :</em></h4>
-                    <p class="editprofil">{{ app.user.nom }} &nbsp; &nbsp; <a href="/"><i class="far fa-edit"></i></a></p>
+                    <p class="editprofil">{{ app.user.nom }} &nbsp; &nbsp; <a href="{{ path('membre_editProfil') }}"><i class="far fa-edit"></i></a></p>
                 </div>
 
                 <div class="col-6 col-12-narrower">
                     <h4><em>Prenom :</em></h4>
-                    <p class="editprofil">{{ app.user.prenom }} &nbsp; &nbsp; <a href="/"><i class="far fa-edit"></i></a></p>
+                    <p class="editprofil">{{ app.user.prenom }} &nbsp; &nbsp; <a href="{{ path('membre_editProfil') }}"><i class="far fa-edit"></i></a></p>
                 </div>
 
                 <div class="col-12">
                     <h4><em>Pseudo :</em></h4>
-                    <p class="editprofil">{{ app.user.pseudo }} &nbsp; &nbsp; <a href="/"><i class="far fa-edit"></i></a></p>
+                    <p class="editprofil">{{ app.user.pseudo }} &nbsp; &nbsp; <a href="{{ path('membre_editProfil') }}"><i class="far fa-edit"></i></a></p>
                 </div>
 
                 <div class="col-6 col-12-narrower">
                     <h4><em>Ville :</em></h4>
-                    <p class="editprofil">{{ app.user.ville }} &nbsp; &nbsp; <a href="/"><i class="far fa-edit"></i></a></p>
+                    <p class="editprofil">{{ app.user.ville }} &nbsp; &nbsp; <a href="{{ path('membre_editProfil') }}"><i class="far fa-edit"></i></a></p>
                 </div>
 
                 <div class="col-6 col-12-narrower">
                     <h4><em>Département :</em></h4>
-                    <p class="editprofil">{{ app.user.departement }} &nbsp; &nbsp; <a href="/"><i class="far fa-edit"></i></a></p>
+                    <p class="editprofil">{{ app.user.departement }} &nbsp; &nbsp; <a href="{{ path('membre_editProfil') }}"><i class="far fa-edit"></i></a></p>
                 </div>
 
                 <div class="col-12">
                     <h4><em>Adresse Email :</em></h4>
-                    <p class="editprofil">{{ app.user.email }} &nbsp; &nbsp; <a href="/"><i class="far fa-edit"></i></a></p>
+                    <p class="editprofil">{{ app.user.email }} &nbsp; &nbsp; <a href="{{ path('membre_editProfil') }}"><i class="far fa-edit"></i></a></p>
                 </div>
 
                 <div class="col-12">
                     <h4><em>Mot de passe :</em></h4>
-                    <p class="editprofil">{{ app.user.password }} &nbsp; &nbsp; <a href="/"><i class="far fa-edit"></i></a></p>
+                    <p class="editprofil">{{ app.user.password }} &nbsp; &nbsp; <a href="{{ path('membre_editProfil') }}"><i class="far fa-edit"></i></a></p>
                 </div>
 
                 <div class="col-12" style="margin: 18px">

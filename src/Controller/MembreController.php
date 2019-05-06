@@ -32,8 +32,7 @@ class MembreController extends AbstractController
         $form = $this->createForm(MembreFormType::class, $membre)
             ->handleRequest($request);
 
-        if ( $form->isSubmitted() && $form->isValid() )
-        {
+        if ($form->isSubmitted() && $form->isValid()) {
             #Encodage du mot de passe avant l'envoi en BDD
             $membre->setPassword(
                 $encoder->encodePassword($membre, $membre->getPassword())
@@ -52,9 +51,8 @@ class MembreController extends AbstractController
             return $this->redirectToRoute('membre_connexion');
 
         }
-
         # Affichage du formulaire dans la vue
-        return $this->render("membre/inscription.html.twig",[
+        return $this->render("membre/inscription.html.twig", [
             'form' => $form->createView()
         ]);
 
@@ -66,15 +64,15 @@ class MembreController extends AbstractController
      * @Route("/connexion.html", name="membre_connexion")
      */
 
-    public function connexion (AuthenticationUtils $authenticationUtils)
+    public function connexion(AuthenticationUtils $authenticationUtils)
     {
         # Récupération du formulaire de connexion
-        $form = $this->createForm(ConnexionFormType::class,[
+        $form = $this->createForm(ConnexionFormType::class, [
             'email' => $authenticationUtils->getLastUsername()
         ]);
 
         # Affichage du formulaire dans la vue
-        return $this->render('membre/connexion.html.twig',[
+        return $this->render('membre/connexion.html.twig', [
             'form' => $form->createView(),
             'error' => $authenticationUtils->getLastAuthenticationError()
         ]);

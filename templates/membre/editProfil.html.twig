@@ -1,38 +1,46 @@
 {% extends "layout.html.twig" %}
 
 {% block title %}
-   Connexion
+    Editer Profil
 {% endblock %}
 
 {% block content %}
     <section id="main" class="container medium">
 
         <header>
-            <h2>Connectez-vous</h2>
+            <h2>Editer mon Profil</h2>
         </header>
 
+        <!-- FORMULAIRE DE MISE A JOUR DU PROFIL -->
+
         <div class="box">
-
-            {% if error %}
-                <div class="messageFlashRed">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-            {% endif %}
-
-            {% for message in app.flashes('notice') %}
-                <div class="messageFlash">
-                    {{ message }}
-                </div>
-            {% endfor %}
 
             {{ form_start(form, { attr: {novalidate: 'novalidate' }} ) }}
 
             <div class="row gtr-50 gtr-uniform">
 
-                <div class="col-12">
-                    {{ form_row(form.email) }}
+                <div class="col-6 col-12-mobilep">
+                    {{ form_row(form.prenom) }}
+                </div>
+
+                <div class="col-6 col-12-mobilep">
+                    {{ form_row(form.nom) }}
                 </div>
 
                 <div class="col-12">
-                    {{ form_row(form.password) }}
+                    {{ form_row(form.pseudo) }}
+                </div>
+
+                <div class="col-6 col-12-mobilep">
+                    {{ form_row(form.ville) }}
+                </div>
+
+                <div class="col-6 col-12-mobilep">
+                    {{ form_row(form.departement) }}
+                </div>
+
+                <div class="col-12">
+                    {{ form_row(form.email) }}
                 </div>
 
                 <div class="col-12">
@@ -41,7 +49,6 @@
                     </ul>
                 </div>
 
-                <p>Si vous n'êtes pas inscrit <i class="fas fa-arrow-right"></i> <a href="/inscription.html">Inscrivez-vous ici.</a></p>
 
             </div> <!-- ./gtr-50 -->
 

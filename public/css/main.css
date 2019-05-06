@@ -3946,6 +3946,15 @@ body.landing #main {
     margin-bottom: 20px;
 }
 
+.messageFlashRed{
+    color: white;
+    background: #C82829;
+    border-radius: 6px;
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
 
 /* Font WeatherIcons */
 
