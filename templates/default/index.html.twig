@@ -29,13 +29,17 @@
                 <section class="box special">
                     <span class="image featured"><img src="{{ asset('images/' ~ lastevent.sport.image) }}" alt="{{ lastevent.titre }}" /></span>
                     <h3>{{ lastevent.titre }}</h3>
-                    <p>{{ lastevent.details }}</p>
+
+                    <p class="eventbox">{{ lastevent.ville }}</p>
+
+                    <p class="eventbox">Le {{ lastevent.date | date('d/m/Y')}} à {{ lastevent.heure | date('H:i:s') }}</p>
+
                     <ul class="actions special">
                         <li><a href="{{ path('evenement_evenement',{
                                 'sports'    : lastevent.sport.slug,
                                 'slug'      : lastevent.slug,
                                 'id'        : lastevent.id
-                            }) }}" class="button alt">Lire la suite</a></li>
+                            }) }}" class="button alt">Voir plus</a></li>
                     </ul>
                 </section>
 
