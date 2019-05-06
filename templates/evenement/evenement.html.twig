@@ -15,10 +15,34 @@
             <h2>{{ evenement.sport.nom }}</h2>
         </header>
 
+        <section class="box special">
+            <header class="major">
+
+                <h2>{{ evenement.titre }}</h2>
+
+                <p>Ville : {{ evenement.ville }} {{ evenement.departement }}</p><br/>
+
+                <p>Lieu : {{ evenement.lieu }}</p><br/>
+
+                <p>Le {{ evenement.date | date('d/m/Y') }} à {{ evenement.heure | date('H:i:s') }}</p><br/>
+
+                <p>Organisateur : {{ evenement.membre.prenom }} {{ evenement.membre.nom }}</p><br/> <br/>
+
+                <p>Détails : {{ evenement.details }}<p><br/>
+
+                <p>{{ evenement.adresse }}</p><br/>
 
 
-        </div>
+                <p>
+                    <ul class="actions special">
+                        <li><a href="" class="button alt">Participer a l'événement</a></li>
+                    </ul>
+                </p>
 
+
+            </header>
+
+        </section>
 
     </section>
 

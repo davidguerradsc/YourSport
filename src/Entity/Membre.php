@@ -74,9 +74,16 @@ class Membre implements UserInterface
     private $ville;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="integer", length=50)
      * @Assert\NotBlank(message="Veuillez indiquez votre département")
-     * @Assert\Length( max="255", maxMessage="Limité à {{ limit }} caractères.")
+     * @Assert\Type(
+     *     type="integer",
+     *     message="Vous devez indiquer votre département en chiffre uniquement. ex: 75, 78, 95 .."
+     * )
+     * @Assert\Regex(
+     *     pattern="/^[0-9]{2}$/",
+     *     message="Vous devez indiquer votre département en chiffre uniquement. ex: 75, 78, 95 .."
+     * )
      */
     private $departement;
 
@@ -191,12 +198,12 @@ class Membre implements UserInterface
         return $this;
     }
 
-    public function getDepartement(): ?string
+    public function getDepartement(): ?int
     {
         return $this->departement;
     }
 
-    public function setDepartement(string $departement): self
+    public function setDepartement(int $departement): self
     {
         $this->departement = $departement;
 

@@ -7,6 +7,7 @@ use App\Entity\Sports;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TimeType;
@@ -40,7 +41,7 @@ class EvenementFormType extends AbstractType
                 ]
             ])
             # DEPARTEMENT
-            ->add('departement', TextType::class, [
+            ->add('departement', IntegerType::class, [
                 'required' => true,
                 'label' => false,
                 'attr' => [
