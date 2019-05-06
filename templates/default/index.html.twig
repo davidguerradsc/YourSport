@@ -1,7 +1,7 @@
 {% extends "layoutindex.html.twig" %}
 
 {% block title %}
-    Accueil
+   YourSport - Accueil
 {% endblock %}
 
 
@@ -43,6 +43,51 @@
             {% endfor %}
 
         </div>
+
+        <!-- Widget Météo -->
+
+        <section id="cta">
+
+            <div id="app">
+
+                <div class="tooltip">
+
+                    <h1 class="tool">
+
+                        <span id="ville"></span>
+
+                        <span class="tooltiptext">Les conditions météorologique du monde entier.</span>
+
+                    </h1>
+
+                    <p>Saisissez une ville de votre choix partout dans le monde ...</p>
+
+                </div><!-- End tooltip -->
+
+                <h3 class="weather">
+                    <span id="state" ></span>,&nbsp;<span id="country"></span>
+                </h3>
+
+                <h3 class="weather">
+
+                    Longitude:&nbsp;<span id="longitude" class="weather"></span>&nbsp; ; &nbsp; Latitude:&nbsp;<span id="latitude"></span>
+
+                </h3>
+
+                <i class="wi"></i>
+
+                <h2>
+                    <span id="temperature" class="weather"></span> <span class="weather">C°</span><br />
+                    <span class="weather">(<span id="conditions"></span>)</span>
+                </h2>
+
+                <h4 class="weather">
+                    Force du vent:&nbsp;<span id="vent"></span>&nbsp;Km/h&nbsp; - &nbsp;Direction:&nbsp;<span id="direction"></span>
+                </h4>
+
+            </div><!-- End App -->
+
+        </section><!-- End widget -->
 
     </section>
 

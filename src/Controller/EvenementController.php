@@ -51,7 +51,7 @@ class EvenementController extends AbstractController
             $em->flush();
 
             # 3. Notification
-            $this->addFlash('notice', 'Félicitations votre événement à bien été crée !');
+//            $this->addFlash('notice', 'Félicitations votre événement à bien été crée !');
 
             # 4. Redirection
             return $this->redirectToRoute('accueil', ['sport' => $evenement->getSport()->getSlug(),

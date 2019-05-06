@@ -15,8 +15,9 @@
         <!-- FORMULAIRE DE CONTACT -->
 
         <div class="box">
+
             {% for message in app.flashes('notice') %}
-                <div class="alert alert-info">
+                <div class="messageFlash">
                     {{ message }}
                 </div>
             {% endfor %}
