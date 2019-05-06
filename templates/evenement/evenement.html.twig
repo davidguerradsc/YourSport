@@ -17,24 +17,32 @@
 
         <section class="box special">
             <header class="major">
+
                 <h2>{{ evenement.titre }}</h2>
-                <p>Ville : {{ evenement.ville }} {{ evenement.departement }}<br />
-                    Lieu : {{ evenement.lieu }}<br />
-                    Le {{ evenement.date | date('d/m/Y')}} à {{ evenement.heure | date('H:i:s') }}<br />
-                    Organisateur : {{ evenement.membre.prenom }} {{ evenement.membre.nom }}<br /> <br />
-                    Détails : {{ evenement.details }} <br /> {{ evenement.adresse }}<br />
+
+                <p>Ville : {{ evenement.ville }} {{ evenement.departement }}</p><br/>
+
+                <p>Lieu : {{ evenement.lieu }}</p><br/>
+
+                <p>Le {{ evenement.date | date('d/m/Y') }} à {{ evenement.heure | date('H:i:s') }}</p><br/>
+
+                <p>Organisateur : {{ evenement.membre.prenom }} {{ evenement.membre.nom }}</p><br/> <br/>
+
+                <p>Détails : {{ evenement.details }}<p><br/>
+
+                <p>{{ evenement.adresse }}</p><br/>
 
 
-                <ul class="actions special">
-                    <li><a href="" class="button alt">Participer a l'événement</a></li>
-                </ul>
-
+                <p>
+                    <ul class="actions special">
+                        <li><a href="" class="button alt">Participer a l'événement</a></li>
+                    </ul>
                 </p>
+
+
             </header>
+
         </section>
-
-        </div>
-
 
     </section>
 
