@@ -16,32 +16,38 @@
         </header>
 
         <div class="row">
+
             {% for evenement in evenements %}
-            <div class="col-4 col-12-narrower">
 
-                <section class="box special">
-                    <span class="image featured"><img src="{{ asset('images/' ~ evenement.sport.image) }}" alt="{{ evenement.titre }}" /></span>
+                <div class="col-4 col-12-narrower">
 
-                    <h3>{{ evenement.titre }}</h3>
+                    <section class="box special">
+                    <span class="image featured"><img src="{{ asset('images/' ~ evenement.sport.image) }}"
+                                                      alt="{{ evenement.titre }}"/></span>
 
-                    <p class="eventbox">{{ evenement.ville }}</p>
+                        <h3>{{ evenement.titre }}</h3>
 
-                    <p class="eventbox">Le {{ evenement.date | date('d/m/Y')}} à {{ evenement.heure | date('H:i:s') }}</p>
+                        <p class="eventbox">{{ evenement.ville }}</p>
 
-                    <ul class="actions special">
-                        <li><a href="{{ path('evenement_evenement',{
-                                'sports'    : evenement.sport.slug,
-                                'slug'      : evenement.slug,
-                                'id'        : evenement.id
-                            }) }}" class="button alt">Voir plus</a></li>
-                    </ul>
-                </section>
+                        <p class="eventbox">Le {{ evenement.date | date('d/m/Y') }}
+                            à {{ evenement.heure | date('H:i:s') }}</p>
 
-            </div>
+                        <ul class="actions special">
+                            <li><a href="{{ path('evenement_evenement',{
+                                    'sports'    : evenement.sport.slug,
+                                    'slug'      : evenement.slug,
+                                    'id'        : evenement.id
+                                }) }}" class="button alt">Voir plus</a></li>
+                        </ul>
+                    </section>
+
+                </div>
 
             {% endfor %}
 
         </div>
+
+        <p style="text-align: center;"><a href="#main">Retour en haut de page</a></p>
 
     </section>
 
