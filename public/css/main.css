@@ -4079,4 +4079,22 @@ i.wi {
     border-radius: 6px;
     margin-top:1em;
     background-color: #160b28;
+
+}
+
+.blue{
+    color: dodgerblue;
+}
+
+.textal{
+    text-align: center;
+}
+
+fb-comments{
+    width: 100%;
+}
+
+.ipapi p{
+    text-align: center;
+    margin: 0.3rem 0 0 0;
 }
