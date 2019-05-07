@@ -4040,6 +4040,16 @@ i.wi {
 .fog {
     background-image: url('images/img/haze.jpg');
 }
+.blue{
+    color: dodgerblue;
+}
+.textal{
+    text-align: center;
+}
+.ipapi p {
+    text-align: center;
+    margin: 0.3rem 0 0 0;
+}
 
 /* météo évenement */
 
@@ -4092,3 +4102,4 @@ i.wi {
     margin-top:1em;
     background-color: #160b28;
 }
+
