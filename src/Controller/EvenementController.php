@@ -119,6 +119,39 @@ class EvenementController extends AbstractController
             'evenement' => $evenement
         ]);
 
+    }
+
+
+    /**
+     * Recupérer les événements par membre
+     * @Route("/{app.user.pseudo}/{id}",
+     *     defaults={"id"="app.user.id"},
+     *     name="evenement_membreEvent")
+     */
+    public function membreEvent($id)
+    {
+        /*
+         * Récupération de l'ID correspondant au membre connecté
+         */
+        $id = $this->getDoctrine()
+            ->getRepository(Membre::class)
+            ->findOneBy(['id' => $id]);
+
+
+        /*
+         * Récup des événements du membre sélectionné
+         */
+        $evenements = $id->getEvenements();
+
+
+        /*
+         * Affichage dans la vue
+         */
+        return $this->render("evenement/memberEvent.html.twig",[
+            'evenements' => $evenements,
+            'id' => $id
+        ]);
+
 
     }
 }

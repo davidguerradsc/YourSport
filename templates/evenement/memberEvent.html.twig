@@ -1,18 +1,14 @@
-{% extends "layout.html.twig" %}
+{% extends 'layout.html.twig' %}
 
 {% block title %}
-
-    Evénements - {{ sport.slug | capitalize }}
-
+    YourSport - Mes Evénements
 {% endblock %}
 
 {% block content %}
-
-    <!-- Main -->
     <section id="main" class="container">
 
         <header>
-            <h2>Evénements  - {{ sport.nom }}</h2>
+            <h2>Mes événements</h2>
         </header>
 
         <div class="row">
@@ -43,9 +39,10 @@
 
         </div>
 
-        <p style="text-align: center;"><a href="#main">Retour en haut de page</a></p>
+
 
     </section>
-
 {% endblock %}
+
+
 
