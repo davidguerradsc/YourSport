@@ -4034,12 +4034,10 @@ i.wi {
 .textal{
     text-align: center;
 }
-fb-comments{
-    width: 100%;
-}
-.ipapi p{
+.ipapi p {
     text-align: center;
     margin: 0.3rem 0 0 0;
+}
 
 /* météo évenement */
 
@@ -4092,3 +4090,4 @@ fb-comments{
     margin-top:1em;
     background-color: #160b28;
 }
+
