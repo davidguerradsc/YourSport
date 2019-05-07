@@ -22,7 +22,7 @@
 
                         <p class="eventbox">{{ evenement.ville }}</p>
 
-                        <p class="eventbox">Le {{ evenement.date | date('d/m/Y')}} à {{ evenement.heure | date('H:i:s') }}</p>
+                        <p class="eventbox">Le {{ evenement.date | date('d/m/Y')}} à {{ evenement.heure | date('H:i') }}</p>
 
                         <ul class="actions special">
                             <li><a href="{{ path('evenement_evenement',{

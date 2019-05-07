@@ -24,20 +24,38 @@
 
             <p>Lieu :{{ evenement.lieu }}</p><br/>
 
-            <p>Le {{ evenement.date | date('d/m/Y') }} à {{ evenement.heure | date('H:i:s') }}</p><br/>
+            <p>Le {{ evenement.date | date('d/m/Y') }} à {{ evenement.heure | date('H:i') }}</p><br/>
 
-            <p>Organisateur : {{ evenement.membre.prenom }} {{ evenement.membre.nom }}</p><br/> <br/>
+            <p>Organisateur : {{ evenement.membre.prenom }} {{ evenement.membre.nom }}</p><br/>
 
-            <p>Détails : {{ evenement.details }}<p><br/>
+            <p>Détails : {{ evenement.details }}</p><br/>
 
             <p>{{ evenement.adresse }}</p><br/>
 
 
-            <p>
-            <ul class="actions special">
-                <li><a href="" class="button alt">Participer a l'événement</a></li>
-            </ul>
-            </p>
+
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <p>
+                <ul class="actions special">
+                    <li><a href="" class="button alt">Participer à l'événement</a></li>
+                </ul>
+                </p>
+
+            {% else %}
+
+                <p><em>Pour participer à l'événement veuillez :</em></p><br/><br/>
+
+                <ul class="actions special">
+                    <li><a href="{{ path('membre_inscription') }}" class="button primary">Vous Inscrire</a></li>
+                    <li><a href="{{ path('membre_connexion') }}" class="button">Vous Connectez</a></li>
+                </ul>
+
+            {% endif %}
+
+            <div class="fb-comments" data-href="http://localhost:8000/~{{ evenement.slug }}" data-width="100%" data-numposts="5"></div>
+
+
+        </header>
 
 
         </header>
