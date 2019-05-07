@@ -45,7 +45,7 @@ class Membre implements UserInterface
      * @ORM\Column(type="string", length=180)
      * @Assert\NotBlank(message="Veuillez saisir votre adresse email")
      * @Assert\Length( max="255", maxMessage="Limité à {{ limit }} caractères.")
-     *  @Assert\Regex(
+     * @Assert\Regex(
      *     pattern="/^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/",
      *     message="Veuillez entrer une adresse mail valide"
      * )
@@ -55,7 +55,14 @@ class Membre implements UserInterface
     /**
      * @ORM\Column(type="string", length=64)
      * @Assert\NotBlank(message="Veuillez saisir un mot de passe")
-     * @Assert\Length( max="255", maxMessage="Limité à {{ limit }} caractères.")
+     * @Assert\Length(
+     *     max="255",
+     *     maxMessage="Limité à {{ limit }} caractères.",
+     *     min="8",
+     *     minMessage="Votre mot de passe doit contenir au moins 8 caractères"
+     *
+     *
+     * )
      */
     private $password;
 

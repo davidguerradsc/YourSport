@@ -1,7 +1,7 @@
 {% extends "layoutindex.html.twig" %}
 
 {% block title %}
-   YourSport - Accueil
+    YourSport - Accueil
 {% endblock %}
 
 
@@ -13,10 +13,10 @@
 
         <section class="box special">
             <header class="major">
-                <h2>Introducing the ultimate mobile app
-                    <br />
-                    for doing stuff with your phone</h2>
-                <p>Blandit varius ut praesent nascetur eu penatibus nisi risus faucibus nunc ornare<br />
+                <h2>Création d'événements sportifs
+                    <br/>
+                    dans un cadre non convetionel! ...</h2>
+                <p>Blandit varius ut praesent nascetur eu penatibus nisi risus faucibus nunc ornare<br/>
                     adipiscing nunc adipiscing. Condimentum turpis massa.</p>
             </header>
         </section>
@@ -24,31 +24,33 @@
 
         <div class="row">
             {% for lastevent in lastevents %}
-            <div class="col-6 col-12-narrower">
+                <div class="col-6 col-12-narrower">
 
-                <section class="box special">
-                    <span class="image featured"><img src="{{ asset('images/' ~ lastevent.sport.image) }}" alt="{{ lastevent.titre }}" /></span>
-                    <h3>{{ lastevent.titre }}</h3>
+                    <section class="box special">
+                        <span class="image featured"><img src="{{ asset('images/' ~ lastevent.sport.image) }}"
+                                                          alt="{{ lastevent.titre }}"/></span>
+                        <h3>{{ lastevent.titre }}</h3>
 
-                    <p class="eventbox">{{ lastevent.ville }}</p>
+                        <p class="eventbox">{{ lastevent.ville }}</p>
 
-                    <p class="eventbox">Le {{ lastevent.date | date('d/m/Y')}} à {{ lastevent.heure | date('H:i:s') }}</p>
+                        <p class="eventbox">Le {{ lastevent.date | date('d/m/Y') }}
+                            à {{ lastevent.heure | date('H:i:s') }}</p>
 
-                    <ul class="actions special">
-                        <li><a href="{{ path('evenement_evenement',{
-                                'sports'    : lastevent.sport.slug,
-                                'slug'      : lastevent.slug,
-                                'id'        : lastevent.id
-                            }) }}" class="button alt">Voir plus</a></li>
-                    </ul>
-                </section>
+                        <ul class="actions special">
+                            <li><a href="{{ path('evenement_evenement',{
+                                    'sports'    : lastevent.sport.slug,
+                                    'slug'      : lastevent.slug,
+                                    'id'        : lastevent.id
+                                }) }}" class="button alt">Voir plus</a></li>
+                        </ul>
+                    </section>
 
-            </div>
+                </div>
             {% endfor %}
 
         </div>
 
-        <!-- Widget Météo -->
+
 
         <!-- Widget Météo -->
 
@@ -56,41 +58,43 @@
 
             <div id="meteo">
 
-               <!-- <div class="tooltip"> -->
+                <!-- <div class="tooltip"> -->
 
-                    <h3 class="tool">
+                <p style="margin: 0 0 0.5em 0;" class="info">
+                    Saisissez une ville de votre choix partout dans le monde ...
+                </p>
 
-                        <span id="ville"></span>
+                <h3 class="tool">
 
-                      <!--  <span class="tooltiptext">Saisissez une ville de votre choix partout dans le monde  ...</span> -->
+                    <span id="ville"></span>
 
-                    </h3>
+                    <!--  <span class="tooltiptext">Saisissez une ville de votre choix partout dans le monde  ...</span> -->
 
-                   <p class="info">
-                       Saisissez une ville de votre choix partout dans le monde ...
-                   </p>
+                </h3>
 
-            <!--    </div> End tooltip -->
+                <!--    </div> End tooltip -->
 
                 <h3 class="weather">
-                    <span id="state" ></span>,&nbsp;<span id="country"></span>
+                    <span id="state"></span>,&nbsp;<span id="country"></span>
                 </h3>
 
                 <h3 class="weather">
 
-                    Longitude:&nbsp;<span id="longitude"></span>&nbsp; ; &nbsp; Latitude:&nbsp;<span id="latitude"></span>
+                    Longitude:&nbsp;<span id="longitude"></span>&nbsp; ; &nbsp; Latitude:&nbsp;<span
+                            id="latitude"></span>
 
                 </h3>
 
                 <i class="wi"></i>
 
                 <h3 class="weather">
-                    <span id="temperature" class="weather"></span> <span class="weather">C°</span><br />
+                    <span id="temperature" class="weather"></span> <span class="weather">C°</span><br/>
                     (<span id="conditions"></span>)
                 </h3>
 
                 <h4 class="weather">
-                    Force du vent:&nbsp;<span id="vent"></span>&nbsp;Km/h&nbsp; - &nbsp;Direction:&nbsp;<span id="direction"></span>
+                    Force du vent:&nbsp;<span id="vent"></span>&nbsp;Km/h&nbsp; - &nbsp;Direction:&nbsp;<span
+                            id="direction"></span>
                 </h4>
 
             </div>
