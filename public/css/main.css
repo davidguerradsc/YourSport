@@ -4025,4 +4025,12 @@ i.wi {
 .fog {
     background-image: url('images/img/haze.jpg');
 }
-
+.blue{
+    color: dodgerblue;
+}
+.textal{
+    text-align: center;
+}
+fb-comments{
+    width: 100%;
+}
