@@ -40,8 +40,6 @@
                 <p>{{ evenement.adresse }}</p><br/>
 
 
-
-
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
 
                     {% for participant in evenement.participant %}
@@ -50,7 +48,9 @@
 
                             <p>
                             <ul class="actions special">
-                                <li><a href="{{ path('evenement_evenement', {'sports' : evenement.sport.slug , 'slug' : evenement.slug , 'id' : evenement.id }) }}" style="background: #aacd4e" class="button alt">Vous êtes déjà Inscrit</a></li>
+                                <li>
+                                    <a href="{{ path('evenement_evenement', {'sports' : evenement.sport.slug , 'slug' : evenement.slug , 'id' : evenement.id }) }}"
+                                       style="background: #aacd4e" class="button alt">Vous êtes déjà Inscrit</a></li>
                             </ul>
                             </p>
 
