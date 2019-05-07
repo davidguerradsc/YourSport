@@ -4034,3 +4034,7 @@ i.wi {
 fb-comments{
     width: 100%;
 }
+.ipapi p{
+    text-align: center;
+    margin: 0.3rem 0 0 0;
+}
