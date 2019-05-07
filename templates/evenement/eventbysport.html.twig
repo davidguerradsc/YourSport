@@ -16,12 +16,12 @@
         </header>
 
         <div class="row">
+
             {% for evenement in evenements %}
                 <div class="col-4 col-12-narrower">
 
                     <section class="box special">
                         <span class="image featured"><img src="{{ asset('images/' ~ evenement.sport.image) }}" alt="{{ evenement.titre }}" /></span>
-
                         <h3>{{ evenement.titre }}</h3>
 
                         <p class="eventbox">{{ evenement.ville }}</p>
@@ -33,7 +33,7 @@
                                     'sports'    : evenement.sport.slug,
                                     'slug'      : evenement.slug,
                                     'id'        : evenement.id
-                                }) }}" class="button alt">Lire la suite</a></li>
+                                }) }}" class="button alt">Voir plus</a></li>
                         </ul>
                     </section>
 

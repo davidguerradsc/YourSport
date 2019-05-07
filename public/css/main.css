@@ -3164,6 +3164,7 @@ body.landing #page-wrapper {
     margin: 0 0 0.5em 0;
     padding: 0;
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+    font-family: 'Audiowide', cursive;
 }
 
 #banner p {
@@ -3744,6 +3745,15 @@ body.landing #main {
         padding-left: 0;
     }
 
+    /* Météo */
+
+    #meteo {
+        padding: 2.5em 1em 3em 1em;
+        margin-bottom: 1em;
+        margin-top: 1em;
+
+    }
+
 }
 
 /* Mobile (Portrait) */
@@ -3845,61 +3855,69 @@ body.landing #main {
         padding: 2.5em 1em 3em 1em;
     }
 
+
+    /* Météo */
+
+    #meteo {
+        padding: 2.5em 1em 3em 1em;
+        margin-bottom: 1em;
+
+    }
+
 }
 
 
-/* Bulle d'information widget météo */
 
 .tool {
     font-size: 3em;
     position: relative;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-    color: #fff;
 }
 
-.weather {
+    /* Widget Météo */
 
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-}
-
-
-.tooltip {
-    position: relative;
-    display: inline-block;
-
-}
-
-.tooltip .tooltiptext {
-    visibility: hidden;
-    background-color: #555;
+#app {
+    background: #2a2a2a;
     color: #fff;
     text-align: center;
     border-radius: 6px;
-    padding: 5px;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 30%;
-    margin-left: -40px;
-    opacity: 0;
-    font-size: 13px;
-    transition: opacity 0.3s;
+
 }
 
-.tooltip .tooltiptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
+
+
+
+#meteo {
+    background-position: center;
+    background-size: cover;
+    padding: 16px;
+    color: #ffffff;
+    border-radius: 6px;
+
 }
 
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
+
+.tool {
+    font-size: 2.5em;
+    position: relative;
+    font-family: 'Trebuchet MS';
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+    color: #fff;
+
+}
+
+.weather {
+    color: #ffffff;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    font-size: 1.5em;
+}
+
+
+.weather1 {
+    color: #ffffff;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    font-size: 1em;
+    font-weight: bold;
 }
 
 .editprofil a:hover {
@@ -3953,6 +3971,12 @@ body.landing #main {
     text-align: center;
     padding: 5px;
     margin-bottom: 20px;
+
+}
+
+.info{
+    color: #f1f1f1;
+    text-shadow: 0.5px 0.5px 0.5px rgba(0,0,0,0.5);
 }
 
 /* <p> pour les evenement */
@@ -3963,46 +3987,42 @@ body.landing #main {
 /* Font WeatherIcons */
 
 i.wi {
-    font-size: 5em;
-    line-height: 2em;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    font-size: 5.5em;
+    line-height: 1.5em;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
 }
 
 /* Classes pour l'affichage du background du widget météo. */
 
-/*.clear {
-    background-image: url('../images/clear.jpg');
+.clear {
+    background-image: url("images/img/clear.jpg");
 }
 
 .clouds {
-    background-image: url('images/clouds1.jpg');
+    background-image: url("images/img/clouds1.jpg");
 }
 
 .rain {
-    background-image: url('images/rain.jpg');
+    background-image: url("images/img/rain.jpg");
 }
 
 .snow {
-    background-image: url('images/rain.jpg');
+    background-image: url("images/img/rain.jpg");
 }
 
 .mist {
-    background-image: url('images/clouds.jpg');
+    background-image: url("images/img/clouds.jpg");
 }
 
 .drizzle {
-    background-image: url('images/clouds.jpg');
+    background-image: url("images/img/clouds.jpg");
 }
 
 .haze {
-    background-image: url('images/haze.jpg');
+    background-image: url('images/img/haze.jpg');
 }
 
 .fog {
-    background-image: url('images/haze.jpg');
+    background-image: url('images/img/haze.jpg');
 }
 
-
-#app {
-    background-image: url('images/haze.jpg');
-}*/

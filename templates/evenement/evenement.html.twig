@@ -2,7 +2,7 @@
 
 {% block title %}
 
-    {{ evenement.slug }}
+    {{ evenement.slug | capitalize }}
 
 {% endblock %}
 
@@ -17,24 +17,44 @@
 
         <section class="box special">
             <header class="major">
-                <h2>{{ evenement.titre }}</h2>
-                <p>Ville : {{ evenement.ville }} {{ evenement.departement }}<br />
-                    Lieu : {{ evenement.lieu }}<br />
-                    Le {{ evenement.date | date('d/m/Y')}} à {{ evenement.heure | date('H:i:s') }}<br />
-                    Organisateur : {{ evenement.membre.prenom }} {{ evenement.membre.nom }}<br /> <br />
-                    Détails : {{ evenement.details }} <br /> {{ evenement.adresse }}<br />
 
+                <h2>{{ evenement.titre }}</h2>
+
+                <p>Ville : {{ evenement.ville }} {{ evenement.departement }}</p><br/>
+
+                <p>Lieu : {{ evenement.lieu }}</p><br/>
+
+                <p>Le {{ evenement.date | date('d/m/Y') }} à {{ evenement.heure | date('H:i:s') }}</p><br/>
+
+                <p>Organisateur : {{ evenement.membre.prenom }} {{ evenement.membre.nom }}</p><br/>
+
+                <p>Détails : {{ evenement.details }}</p><br/>
+
+                <p>{{ evenement.adresse }}</p><br/>
+
+
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <p>
+                    <ul class="actions special">
+                        <li><a href="" class="button alt">Participer à l'événement</a></li>
+                    </ul>
+                </p>
+
+                {% else %}
+
+                    <p><em>Pour participer à l'événement veuillez :</em></p><br/><br/>
 
                 <ul class="actions special">
-                    <li><a href="" class="button alt">Participer a l'événement</a></li>
+                    <li><a href="{{ path('membre_inscription') }}" class="button primary">Vous Inscrire</a></li>
+                    <li><a href="{{ path('membre_connexion') }}" class="button">Vous Connectez</a></li>
                 </ul>
 
-                </p>
+                {% endif %}
+
+                <div class="fb-comments" data-href="http://localhost:8000/~&#123;&#123; evenement.slug &#125;&#125;" data-width="auto" data-numposts="5"></div>
             </header>
+
         </section>
-
-        </div>
-
 
     </section>
 
