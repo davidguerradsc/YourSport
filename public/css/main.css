@@ -3974,6 +3974,53 @@ body.landing #main {
 
 }
 
+
+/* Widget Météo */
+
+#app {
+    background: #2a2a2a;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+
+}
+
+
+
+#meteo {
+    background-position: center;
+    background-size: cover;
+    padding: 16px;
+    color: #ffffff;
+    border-radius: 6px;
+
+}
+
+
+.tool {
+    font-size: 2.5em;
+    position: relative;
+    font-family: 'Trebuchet MS';
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+    color: #fff;
+
+}
+
+.weather {
+    color: #ffffff;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    font-size: 1.5em;
+}
+
+
+.weather1 {
+    color: #ffffff;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    font-size: 1em;
+    font-weight: bold;
+}
+
+
 .info{
     color: #f1f1f1;
     text-shadow: 0.5px 0.5px 0.5px rgba(0,0,0,0.5);

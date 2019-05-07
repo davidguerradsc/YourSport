@@ -47,12 +47,6 @@ const ip = await fetch('https://api.ipify.org?format=json')
   .then(json     => json.country_code)
 
 
-  // 2-Bis. Récupération de la région administratve.
-
-/*const region = await fetch('http://api.ipstack.com/' + ip + '?access_key=f8235302669e9034b6acfea7bf969128&lang=fr')
-  .then(resultat => resultat.json())
-  .then(json     => json.region_name)*/
-
 
   } else {
 
