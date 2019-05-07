@@ -47,12 +47,6 @@ const ip = await fetch('https://api.ipify.org?format=json')
   .then(json     => json.country_code)
 
 
-  // 2-Bis. Récupération de la région administratve.
-
-/*const region = await fetch('http://api.ipstack.com/' + ip + '?access_key=f8235302669e9034b6acfea7bf969128&lang=fr')
-  .then(resultat => resultat.json())
-  .then(json     => json.region_name)*/
-
 
   } else {
 
@@ -99,12 +93,12 @@ function displayWeatherInfos(data){
 
 
 
-// Convertion de la forçe du vent de métre/seconde à kilométre/heure.
+// Convertion de la forçe du vent.
 
       vent = vent * 3.6;
 
 
-// Les données concernant le vent sont en degrés, convertissons les en "axes boussole".
+// Convertion de la direction du vent.
 
 if (direction < 23) {
 
@@ -171,11 +165,11 @@ else if (direction <= 360) {
 
       document.querySelector('i.wi').className = weatherIcons [conditions];
 
+
 // Affichage du fond d'ecran en fonction des conditions météo.
 
+    document.getElementById('meteo').className = conditions.toLowerCase()
 
-
-     //document.body.className = conditions.toLowerCase();
 
 
 
