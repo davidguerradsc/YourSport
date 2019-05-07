@@ -32,7 +32,7 @@ class DefaultController extends AbstractController
     public function sport($slug)
     {
         /*
-         * Récuperation du sport correspondant au slug passé en parametre dans la route
+         * Récupération du sport correspondant au slug passée en paramètre dans la route
          * ---------------------------------
          * Recup du "Slug" dans la variable $slug
          */
@@ -47,7 +47,7 @@ class DefaultController extends AbstractController
         $evenements = $sport->getEvenements();
 
         /*
-         * affichage dans la vue
+         * Affichage dans la vue
          */
 
         return $this->render("evenement/eventbysport.html.twig",[
