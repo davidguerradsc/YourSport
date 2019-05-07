@@ -7,6 +7,7 @@ namespace App\Controller;
 use App\Entity\Membre;
 use App\Form\ConnexionFormType;
 use App\Form\MembreFormType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Entity;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
