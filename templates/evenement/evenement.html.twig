@@ -2,49 +2,220 @@
 
 {% block title %}
 
-    {{ evenement.slug }}
+   YourSport | {{ evenement.slug }}
 
 {% endblock %}
 
 {% block content %}
 
-    <!-- Main -->
-    <section id="main" class="container">
+<!-- Main -->
+<section id="main" class="container">
 
-        <header>
-            <h2>{{ evenement.sport.nom }}</h2>
+    <header>
+        <h2>{{ evenement.sport.nom }}</h2>
+    </header>
+
+    <section class="box special">
+        <header class="major">
+
+            <h2>{{ evenement.titre }}</h2>
+
+            <p>Ville : <span id="city">{{ evenement.ville }}</span> {{ evenement.departement }}</p><br/>
+
+            <p>Lieu :{{ evenement.lieu }}</p><br/>
+
+            <p>Le {{ evenement.date | date('d/m/Y') }} à {{ evenement.heure | date('H:i:s') }}</p><br/>
+
+            <p>Organisateur : {{ evenement.membre.prenom }} {{ evenement.membre.nom }}</p><br/> <br/>
+
+            <p>Détails : {{ evenement.details }}<p><br/>
+
+            <p>{{ evenement.adresse }}</p><br/>
+
+
+            <p>
+            <ul class="actions special">
+                <li><a href="" class="button alt">Participer a l'événement</a></li>
+            </ul>
+            </p>
+
+
         </header>
-
-        <section class="box special">
-            <header class="major">
-
-                <h2>{{ evenement.titre }}</h2>
-
-                <p>Ville : {{ evenement.ville }} {{ evenement.departement }}</p><br/>
-
-                <p>Lieu : {{ evenement.lieu }}</p><br/>
-
-                <p>Le {{ evenement.date | date('d/m/Y') }} à {{ evenement.heure | date('H:i:s') }}</p><br/>
-
-                <p>Organisateur : {{ evenement.membre.prenom }} {{ evenement.membre.nom }}</p><br/> <br/>
-
-                <p>Détails : {{ evenement.details }}<p><br/>
-
-                <p>{{ evenement.adresse }}</p><br/>
-
-
-                <p>
-                    <ul class="actions special">
-                        <li><a href="" class="button alt">Participer a l'événement</a></li>
-                    </ul>
-                </p>
-
-
-            </header>
-
-        </section>
 
     </section>
 
-{% endblock %}
+    <section id="app">
+
+        <h2 class="weather"><span id="ville"></span></h2>
+
+        Département:&nbsp;<span id="nom"></span>&nbsp;(<span id="code"></span>)
+
+    </section>
+
+
+    <section>
+
+        <div class="row">
+            <div class="col-3 col-12-narrower">
+                <div class="meteo_event">
+
+                    <div id="jour0"><!-- Affichage 1er jour -->
+
+                        <p>
+
+                            le:&nbsp;<span id="txt"></span><br/>
+
+                        </p>
+
+
+                        <h2 class="weather">
+
+                            <span id="temperature"></span> C°<br/>
+
+                        </h2>
+
+                        <i class="wi"></i>
+
+                        <p class="info">
+
+                            <span id="conditions"></span><br/>
+                            <span id="description"></span>
+
+                        </p>
+
+                        <p class="info">
+                            Force du vent:&nbsp;<span id="vent"></span>&nbsp;Km/h<br/>
+                            Direction:&nbsp;<span id="direction"></span>
+                        </p>
+
+                    </div><!-- /Premier jour -->
+
+
+                </div>
+
+            </div>
+
+            <div class="col-3 col-12-narrower">
+
+                <div class="meteo_event">
+
+                    <div id="jour1"><!-- Affichage 2éme jour -->
+
+                        <p>
+
+                            le:&nbsp;<span id="txt1"></span><br/>
+
+                        </p>
+
+
+                        <h2 class="weather">
+
+                            <span id="temperature1"></span> C°<br/>
+
+                        </h2>
+
+                        <i class="wi1"></i>
+
+                        <p class="info1">
+
+                            <span id="conditions1"></span><br/>
+                            <span id="description1"></span>
+
+                        </p>
+
+                        <p class="info">
+                            Force du vent:&nbsp;<span id="vent1"></span>&nbsp;Km/h<br/>
+                            Direction:&nbsp;<span id="direction1"></span>
+                        </p>
+
+                    </div><!-- /Deuxieme jour -->
+
+
+                </div>
+
+            </div>
+
+            <div class="col-3 col-12-narrower">
+                <div class="meteo_event">
+
+                    <div id="jour2"><!-- Affichage 3éme jour -->
+
+                        <p>
+
+                            le:&nbsp;<span id="txt2"></span><br/>
+
+                        </p>
+
+
+                        <h2 class="weather">
+
+                            <span id="temperature2"></span> C°<br/>
+
+                        </h2>
+
+                        <i class="wi2"></i>
+
+                        <p class="info">
+
+                            <span id="conditions2"></span><br/>
+                            <span id="description2"></span>
+
+                        </p>
+
+                        <p class="info">
+                            Force du vent:&nbsp;<span id="vent2"></span>&nbsp;Km/h<br/>
+                            Direction:&nbsp;<span id="direction2"></span>
+                        </p>
+
+                    </div><!-- /Troisiéme jour -->
+
+
+                </div>
+
+            </div>
+            <div class="col-3 col-12-narrower">
+                <div class="meteo_event">
+
+                    <div id="jour3"><!-- Affichage 4éme jour -->
+
+                        <p>
+
+                            le:&nbsp;<span id="txt3"></span><br/>
+
+                        </p>
+
+
+                        <h2 class="weather">
+
+                            <span id="temperature3"></span> C°<br/>
+
+                        </h2>
+
+                        <i class="wi3"></i>
+
+                        <p class="info">
+
+                            <span id="conditions3"></span><br/>
+                            <span id="description3"></span>
+
+                        </p>
+
+                        <p class="info">
+                            Force du vent:&nbsp;<span id="vent3"></span>&nbsp;Km/h<br/>
+                            Direction:&nbsp;<span id="direction3"></span>
+                        </p>
+
+                    </div><!-- /Quatriéme jour -->
+
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </section>
+
+</section>
+            {% endblock %}
 
