@@ -6,6 +6,7 @@ namespace App\Controller;
 use App\Entity\Evenement;
 use App\Entity\Membre;
 use App\Form\EvenementFormType;
+use function Sodium\crypto_box_publickey_from_secretkey;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -55,8 +56,8 @@ class EvenementController extends AbstractController
 
             # 4. Redirection
             return $this->redirectToRoute('evenement_evenement', ['sports' => $evenement->getSport()->getSlug(),
-                                                      'slug' => $evenement->getSlug(),
-                                                      'id'   => $evenement->getId()]);
+                'slug' => $evenement->getSlug(),
+                'id' => $evenement->getId()]);
         }
 
         return $this->render("evenement/eventform.html.twig", ['form' => $form->createView()]);
@@ -75,7 +76,7 @@ class EvenementController extends AbstractController
 
         $evenements = $repository->findEvent();
 
-        return $this->render("evenement/findevent.html.twig",[
+        return $this->render("evenement/findevent.html.twig", [
             'evenements' => $evenements
         ]);
     }
@@ -90,7 +91,7 @@ class EvenementController extends AbstractController
 
         $lastevents = $repository->findLatest();
 
-        return $this->render("default/index.html.twig",[
+        return $this->render("default/index.html.twig", [
             'lastevents' => $lastevents
         ]);
 
@@ -115,7 +116,7 @@ class EvenementController extends AbstractController
         /*
          * On passe à la vue
          */
-        return $this->render("evenement/evenement.html.twig",[
+        return $this->render("evenement/evenement.html.twig", [
             'evenement' => $evenement
         ]);
 
@@ -147,11 +148,9 @@ class EvenementController extends AbstractController
         /*
          * Affichage dans la vue
          */
-        return $this->render("evenement/memberEvent.html.twig",[
+        return $this->render("evenement/memberEvent.html.twig", [
             'evenements' => $evenements,
             'id' => $id
         ]);
-
-
     }
 }

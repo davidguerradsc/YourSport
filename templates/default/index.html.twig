@@ -28,8 +28,8 @@
 
                     <section class="box special">
                         <span class="image featured"><img src="{{ asset('images/' ~ lastevent.sport.image) }}"
-                                                          alt="{{ lastevent.titre }}"/></span>
-                        <h3>{{ lastevent.titre }}</h3>
+                                                          alt="{{ lastevent.titre | summarize }}"/></span>
+                        <h3>{{ lastevent.titre | summarize }}</h3>
 
                         <p class="eventbox">{{ lastevent.ville }}</p>
 

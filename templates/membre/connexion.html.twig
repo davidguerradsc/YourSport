@@ -14,7 +14,7 @@
         <div class="box">
 
             {% if error %}
-                <div class="messageFlashRed">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                <div class="messageFlashRed">{{ error.messageKey|trans(error.messageData, 'security')| replace({"Invalid credentials." : "Votre mot de passe ou email est invalide, veuillez réessayer."}) }}</div>
             {% endif %}
 
             {% for message in app.flashes('notice') %}
