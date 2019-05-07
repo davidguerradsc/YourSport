@@ -121,17 +121,37 @@ class EvenementController extends AbstractController
 
     }
 
+
     /**
-     * Fonction qui affiche les événements crées par un membre.
-     * @Route("/mes_evenements.html", name="evenement_memberEvent")
+     * Recupérer les événements par membre
+     * @Route("/{app.user.pseudo}/{id}",
+     *     defaults={"id"="app.user.id"},
+     *     name="evenement_membreEvent")
      */
-    public function memberEvent()
+    public function membreEvent($id)
     {
-        $repository = $this->getDoctrine()
-            ->getRepository(Evenement::class);
+        /*
+         * Récupération de l'ID correspondant au membre connecté
+         */
+        $id = $this->getDoctrine()
+            ->getRepository(Membre::class)
+            ->findOneBy(['id' => $id]);
 
-        $evenements = $repository->memberEvent();
 
-        return $this->render("evenement/memberEvent.html.twig");
+        /*
+         * Récup des événements du membre sélectionné
+         */
+        $evenements = $id->getEvenements();
+
+
+        /*
+         * Affichage dans la vue
+         */
+        return $this->render("evenement/memberEvent.html.twig",[
+            'evenements' => $evenements,
+            'id' => $id
+        ]);
+
+
     }
 }

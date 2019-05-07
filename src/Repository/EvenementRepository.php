@@ -48,15 +48,6 @@ class EvenementRepository extends ServiceEntityRepository
             ;
     }
 
-    public function memberEvent()
-    {
-        return $this->createQueryBuilder('a')
-            ->where('a.membre = a.id')
-            ->orderBy('a.id', 'desc')
-            ->getQuery()
-            ->getResult()
-            ;
-    }
 
 
     // /**
