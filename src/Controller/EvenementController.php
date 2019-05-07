@@ -119,6 +119,19 @@ class EvenementController extends AbstractController
             'evenement' => $evenement
         ]);
 
+    }
 
+    /**
+     * Fonction qui affiche les événements crées par un membre.
+     * @Route("/mes_evenements.html", name="evenement_memberEvent")
+     */
+    public function memberEvent()
+    {
+        $repository = $this->getDoctrine()
+            ->getRepository(Evenement::class);
+
+        $evenements = $repository->memberEvent();
+
+        return $this->render("evenement/memberEvent.html.twig");
     }
 }
