@@ -7,7 +7,7 @@ $(function() {
         $(`
                     <div class="ipapi">
                     <p>
-                        Tout abus du formulaire de contact pourra entraîner un ban Ip.<br />
+                        Tout abus du formulaire de contact pourra entraîner un ban IP.<br />
                         Votre IP : ${data.ip}
                         <br/> ${data.city} - ${data.region}
                     </p>

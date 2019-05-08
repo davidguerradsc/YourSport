@@ -5,11 +5,13 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\MembreRepository")
+ * @UniqueEntity(fields={"email"}, errorPath="email", message="Cette adresse email est déjà prise.")
  */
 class Membre implements UserInterface
 {
@@ -108,6 +110,7 @@ class Membre implements UserInterface
      * @ORM\ManyToMany(targetEntity="App\Entity\Evenement", mappedBy="participant")
      */
     private $participation;
+
 
     public function __construct()
     {
@@ -328,6 +331,7 @@ class Membre implements UserInterface
     {
         return $this->email;
     }
+    
 
     /**
      * Removes sensitive data from the user.
@@ -338,4 +342,5 @@ class Membre implements UserInterface
     public function eraseCredentials()
     {
     }
+
 }

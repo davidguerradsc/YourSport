@@ -3920,7 +3920,19 @@ body.landing #main {
     text-align: center;
     padding: 5px;
     margin-bottom: 20px;
+}
 
+.messageFlashInfo{
+    color: white;
+    background: #e89980;
+    border-radius: 6px;
+    text-align: center;
+    padding: 0.5em;
+}
+
+.messageFlashInfo p{
+    margin: 0;
+    padding: 0.5em;
 }
 
 
@@ -4089,5 +4101,24 @@ i.wi {
     border-radius: 6px;
     margin-top:1em;
     background-color: #160b28;
+
 }
+
+.blue{
+    color: dodgerblue;
+}
+
+.textal{
+    text-align: center;
+}
+
+fb-comments{
+    width: 100%;
+}
+
+.ipapi p{
+    text-align: center;
+    margin: 0.3rem 0 0 0;
+}
+
 

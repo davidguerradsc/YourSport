@@ -1,0 +1,39 @@
+easy_admin:
+    site_name: 'YourSport <em>Admin</em>'
+    entities:
+        Evenement:
+            list:
+                title: "Evénements"
+            class: App\Entity\Evenement
+            form:
+                fields:
+                    - {property: 'titre'}
+                    - {property: 'sport'}
+                    - {property: 'departement'}
+                    - {property: 'lieu'}
+                    - {property: 'adresse'}
+                    - {property: 'details'}
+                    - {property: 'date'}
+                    - {property: 'heure'}
+        Sports:
+            list:
+                title: "Sports"
+            class: App\Entity\Sports
+            form:
+                fields:
+                    - {property: 'nom'}
+                    - {property: 'slug'}
+                    - {property: 'image'}
+        Membres:
+            list:
+                title: "Membres"
+            class: App\Entity\Membre
+            form:
+                fields:
+                    - {property: 'prenom'}
+                    - {property: 'nom'}
+                    - {property: 'pseudo'}
+                    - {property: 'email'}
+                    - {property: 'password'}
+                    - {property: 'ville'}
+                    - {property: 'departement'}

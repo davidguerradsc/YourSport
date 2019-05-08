@@ -7,13 +7,15 @@ namespace App\Controller;
 use App\Entity\Membre;
 use App\Form\ConnexionFormType;
 use App\Form\MembreFormType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Entity;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
-class MembreController extends AbstractController
+class
+MembreController extends AbstractController
 {
 
     /**
