@@ -1,27 +1,31 @@
-    <!-- Header -->
-    <header id="header" class="alt">
 
-            <h1><a href="{{ path('accueil') }}">YourSport</a></h1>
+{# BARRE DE NAVIGATION - HEADER PAGE D'ACCUEIL #}
 
+<!-- Header -->
+<header id="header" class="alt">
 
-        <nav id="nav">
-            <ul>
-                <li><a href="{{ path('accueil') }}">Accueil</a></li>
+    <h1><a href="{{ path('accueil') }}">YourSport</a></h1>
 
-                <li><a href="{{ path('evenement_list') }}">Trouver Evénement</a></li>
+    <nav id="nav">
+        <ul>
+            <li><a href="{{ path('accueil') }}">Accueil</a></li>
 
-                <li>
-                    <a href="#" class="icon fa-angle-down">Sports</a>
-                    <ul>
-                        {% for sports in sports %}
+            <li><a href="{{ path('evenement_list') }}">Trouver Evénement</a></li>
+
+            <li>
+                <a href="#" class="icon fa-angle-down">Sports</a>
+                <ul>
+                    {% for sports in sports %}
                         <li><a href="{{ path('default_listsport',{
                                 'slug' : sports.slug
                             }) }}">{{ sports.nom }}</a></li>
-                        {% endfor %}
-                    </ul>
-                </li>
+                    {% endfor %}
+                </ul>
+            </li>
 
-                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            {# Condition d'être connecté pour un affichage des fonctions utilisateurs #}
+
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                 <li>
                     <a href="#" class="icon fa-angle-down">Profil</a>
                     <ul>
@@ -30,16 +34,22 @@
                         <li><a href="{{ path('evenement_eventByMember') }}">Mes événements</a></li>
                     </ul>
                 </li>
-                {% endif %}
+            {% endif %}
 
-                <li><a href="{{ path('contact_contact') }}">Contact</a></li>
+            <li><a href="{{ path('contact_contact') }}">Contact</a></li>
 
-            </ul>
-        </nav>
-    </header>
+        </ul>
+    </nav>
 
-    <!-- Banner -->
-    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+</header>
+
+{# FIN BARRE DE NAVIGATION #}
+
+
+{# Image Bannière + Condition sur affichage des boutons #}
+
+<!-- Banner -->
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
     <section id="banner">
         <h2>YOURSPORT</h2>
         <h3>
@@ -54,7 +64,7 @@
         </ul>
     </section>
 
-    {% else %}
+{% else %}
     <section id="banner">
         <h2>YOURSPORT</h2>
 
@@ -65,4 +75,6 @@
             <li><a href="{{ path('membre_connexion') }}" class="button">Connexion</a></li>
         </ul>
     </section>
-    {% endif %}
+{% endif %}
+
+{# Fin Bannière #}

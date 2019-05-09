@@ -15,13 +15,10 @@
             <h2>{{ evenement.sport.nom }}</h2>
         </header>
 
-        {% for participant in evenement.participant %}
-
-
-        {% endfor %}
-
+        {# AFFICHAGE D'UN EVENEMENT #}
 
         <section class="box special">
+
             <header class="major">
 
                 <h2>{{ evenement.titre }}</h2>
@@ -39,35 +36,51 @@
                 <p>{{ evenement.adresse }}</p><br/>
 
 
+                {# FIN AFFICHAGE #}
 
+
+                {# GESTION DES BOUTONS DE PARTICIPATION #}
 
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
 
-                    {% for participant in evenement.participant %}
+                    {% for participant in evenement.participant if app.user.email == participant.email %}
 
-        
+                        <p>
+                        <ul class="actions special">
+                            <li>
+                                <a href="{{ path('evenement_evenement', {'sports' : evenement.sport.slug , 'slug' : evenement.slug , 'id' : evenement.id }) }}"
+                                   style="background: #aacd4e" class="button alt">
+                                    Vous êtes déjà Inscrit
+                                </a>
+                            </li>
+                        </ul>
 
-                        {% if app.user.prenom == participant.prenom %}
-            
+                        {#<ul class="actions special">#}
+                        {#<li>#}
+                        {#<a href="{{ path('evenement_leaveEvent') }}"#}
+                        {#class="button alt">#}
+                        {#Se désinscrire#}
+                        {#</a>#}
+                        {#</li>#}
+                        {#</ul>#}
+                        {#</p>#}
 
-                            <p>
-                            <ul class="actions special">
-                                <li><a href="{{ path('evenement_evenement', {'sports' : evenement.sport.slug , 'slug' : evenement.slug , 'id' : evenement.id }) }}" style="background: #aacd4e" class="button alt">Vous êtes déjà Inscrit</a></li>
-                            </ul>
-                            </p>
 
+                    {% else %}
 
-                        {% endif %}
+                        <p>
+                        <ul class="actions special">
+                            <li>
+                                <a href="{{ path('evenement_participer', { 'id' : evenement.id }) }}"
+                                   class="button alt"
+                                   onclick="return confirm('Vous confirmez votre inscription à l\'événement ?')">
+                                    Participer à l'événement
+                                </a>
+                            </li>
+                        </ul>
+                        </p>
 
                     {% endfor %}
-
-                    <p>
-                    <ul class="actions special">
-                        <li><a href="{{ path('evenement_participer', { 'id' : evenement.id }) }}" class="button alt">Participer
-                                à l'événement</a></li>
-                    </ul>
-                    </p>
-
 
                 {% else %}
 
@@ -80,13 +93,49 @@
 
                 {% endif %}
 
-                <div class="fb-comments" data-href="http://localhost:8000/~{{ evenement.slug }}" data-width="100%"
+                {# FIN BOUTON #}
+
+
+                {# AFFICHAGE DES PARTICIPANTS DANS UN TABLEAU #}
+
+                <h4>Liste des Participants :</h4>
+
+                <table>
+
+                    <tr class="entete">
+                        <td class="impaire">Prénom</td>
+                        <td class="paire">Pseudo</td>
+                        <td class="impaire">Ville</td>
+                        <td class="paire">Date de naissance</td>
+                    </tr>
+
+                    {% for participant in evenement.participant %}
+                        <tr>
+                            <td class="impaire">{{ participant.prenom }}</td>
+                            <td class="paire">{{ participant.pseudo }}</td>
+                            <td class="impaire">{{ participant.ville }}</td>
+                            <td class="paire">{{ participant.DateDeNaissance | date('d/m/Y') }}</td>
+                        </tr>
+                    {% endfor %}
+
+                </table>
+
+                {# FIN TABLEAU #}
+
+
+                {# PLUGIN COMMENTAIRE FACEBOOK #}
+
+                <div class="fb-comments" data-href="http://localhost:8000/~{{ evenement.slug }}" data-width="auto"
                      data-numposts="5"></div>
+
+                {# FIN PLUGIN #}
 
 
             </header>
 
         </section>
+
+        {# AFFICHAGE DE LA METEO DES 4 PROCHAINS JOURS #}
 
         <section id="app">
 
@@ -259,6 +308,8 @@
             </div>
 
         </section>
+
+        {# FIN METEO #}
 
     </section>
 

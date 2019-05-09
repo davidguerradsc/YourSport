@@ -1,47 +1,58 @@
-    <!-- Header -->
-    <header id="header">
-        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
 
-            <h1><a href="{{ path('accueil') }}">Yoursport &nbsp;|&nbsp; {{ app.user.prenom |capitalize }} &nbsp; {{ app.user.nom| capitalize }}</a></h1>
+{# HEADER PAGE AUTRE #}
 
-        {% else %}
-            <h1><a href="{{ path('accueil') }}">YourSport</a></h1>
-        {% endif %}
+<!-- Header -->
+<header id="header">
 
+    {# Condition pour affichage de l'utilisateur connecté #}
 
-        <nav id="nav">
-            <ul>
-                <li><a href="{{ path('accueil') }}">Accueil</a></li>
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <h1><a href="{{ path('accueil') }}">Yoursport &nbsp;|&nbsp; {{ app.user.prenom |capitalize }}
+                &nbsp; {{ app.user.nom| capitalize }}</a></h1>
+    {% else %}
+        <h1><a href="{{ path('accueil') }}">YourSport</a></h1>
+    {% endif %}
 
-                <li><a href="{{ path('evenement_list') }}">Trouver Evénement</a></li>
+    {# BARRE DE NAVIGATION - PAGE AUTRE #}
 
+    <nav id="nav">
+        <ul>
+            <li><a href="{{ path('accueil') }}">Accueil</a></li>
+
+            <li><a href="{{ path('evenement_list') }}">Trouver Evénement</a></li>
+
+            <li>
+
+                <a href="#" class="icon fa-angle-down">Sports</a>
+                <ul>
+                    {% for sports in sports %}
+                        <li><a href="{{ path('default_listsport',{
+                                'slug' : sports.slug
+                            }) }}">{{ sports.nom }}</a></li>
+                    {% endfor %}
+                </ul>
+            </li>
+
+            {# Condition d'être connecté pour un affichage des fonctions utilisateurs #}
+
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                 <li>
-
-                    <a href="#" class="icon fa-angle-down">Sports</a>
+                    <a href="#" class="icon fa-angle-down">Profil</a>
                     <ul>
-                        {% for sports in sports %}
-                            <li><a href="{{ path('default_listsport',{
-                                    'slug' : sports.slug
-                                }) }}">{{ sports.nom }}</a></li>
-                        {% endfor %}
+                        <li><a href="{{ path('membre_viewProfil') }}">Voir Profil</a></li>
+                        <li><a href="{{ path('evenement_createEvenement') }}">Créer Evénement</a></li>
+                        <li><a href="{{ path('evenement_eventByMember') }}">Mes événements</a></li>
                     </ul>
                 </li>
+            {% endif %}
 
-                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                    <li>
-                        <a href="#" class="icon fa-angle-down">Profil</a>
-                        <ul>
-                            <li><a href="{{ path('membre_viewProfil') }}">Voir Profil</a></li>
-                            <li><a href="{{ path('evenement_createEvenement') }}">Créer Evénement</a></li>
-                            <li><a href="{{ path('evenement_eventByMember') }}">Mes événements</a></li>
-                        </ul>
-                    </li>
-                {% endif %}
-
-                <li><a href="{{ path('contact_contact') }}">Contact</a></li>
+            <li><a href="{{ path('contact_contact') }}">Contact</a></li>
 
 
-                <!--<li><a href="#" class="button">Connexion</a></li>-->
-            </ul>
-        </nav>
-    </header>
+            <!--<li><a href="#" class="button">Connexion</a></li>-->
+        </ul>
+    </nav>
+
+    {# FIN BARRE DE NAVIGATION #}
+
+</header>
