@@ -1,7 +1,7 @@
 {% extends "layout.html.twig" %}
 
 {% block title %}
-   YourSort - Inscription
+    YourSort - Inscription
 {% endblock %}
 
 {% block content %}
@@ -56,7 +56,8 @@
                     <ul class="actions special">
                         <li>{{ form_row(form.submit) }}</li>
                     </ul>
-                    <p style="text-align: center">En cliquant sur s'inscrire, vous acceptez nos <a href="{{ path('accueil') }}">Conditions Générales d'Utilisation</a> </p>
+                    <p style="text-align: center">En cliquant sur s'inscrire, vous acceptez nos <a
+                                href="{{ path('default_cgu') }}">Conditions Générales d'Utilisation</a></p>
                 </div>
 
 
@@ -64,9 +65,11 @@
 
             {{ form_end(form) }}
 
+            <!-- FIN FORMULAIRE -->
+
         </div> <!-- ./box -->
 
-    </section>
+    </section> <!-- ./main-->
 
 {% endblock %}
 

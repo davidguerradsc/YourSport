@@ -12,40 +12,61 @@
     <section id="main" class="container">
 
         <header>
-            <h2>Evénements  - {{ sport.nom }}</h2>
+            <h2>Evénements - {{ sport.nom }}</h2>
         </header>
 
-        <div class="row">
+        {# AFFICHAGE DES EVENEMENTS PAR SPORT DANS UNE BOUCLE #}
 
-            {% for evenement in evenements %}
-                <div class="col-4 col-12-narrower">
+        {% if evenements is not empty %}
 
-                    <section class="box special">
-                        <span class="image featured"><img src="{{ asset('images/' ~ evenement.sport.image) }}" alt="{{ evenement.titre }}" /></span>
-                        <h3>{{ evenement.titre }}</h3>
+            <div class="row">
 
-                        <p class="eventbox">{{ evenement.ville }}</p>
+                {% for evenement in evenements %}
+                    <div class="col-4 col-12-narrower">
 
-                        <p class="eventbox">Le {{ evenement.date | date('d/m/Y')}} à {{ evenement.heure | date('H:i') }}</p>
+                        <section class="box special">
 
-                        <ul class="actions special">
-                            <li><a href="{{ path('evenement_evenement',{
-                                    'sports'    : evenement.sport.slug,
-                                    'slug'      : evenement.slug,
-                                    'id'        : evenement.id
-                                }) }}" class="button alt">Voir plus</a></li>
-                        </ul>
-                    </section>
+                            <span class="image featured"><img src="{{ asset('images/' ~ evenement.sport.image) }}"
+                                                              alt="{{ evenement.titre }}"/></span>
+                            <h3>{{ evenement.titre }}</h3>
 
-                </div>
+                            <p class="eventbox">{{ evenement.ville }}</p>
 
-            {% endfor %}
+                            <p class="eventbox">Le {{ evenement.date | date('d/m/Y') }}
+                                à {{ evenement.heure | date('H:i') }}</p>
 
-        </div>
+                            <ul class="actions special">
+                                <li><a href="{{ path('evenement_evenement',{
+                                        'sports'    : evenement.sport.slug,
+                                        'slug'      : evenement.slug,
+                                        'id'        : evenement.id
+                                    }) }}" class="button alt">Voir plus</a></li>
+                            </ul>
 
-        <p style="text-align: center;"><a href="#main">Retour en haut de page</a></p>
+                        </section> <!-- ./box special -->
 
-    </section>
+                    </div> <!-- ./col-4 -->
+
+                {% endfor %}
+
+            </div> <!-- ./row -->
+
+            <p style="text-align: center;"><a href="#main">Retour en haut de page</a></p>
+
+        {% else %}
+
+            {# S'IL N'Y A PAS D'EVENEMENTS DE CREE DANS CE SPORT => MESSAGE D'INFO #}
+
+            <div class="messageFlashInfo">
+                <p>Il n'y a pas d'événement concernant ce sport pour l'instant.</p>
+            </div>
+
+        {% endif %}
+
+        {# FIN DE LA BOUCLE DES EVENEMENTS #}
+
+    </section> <!-- ./main -->
+
 
 {% endblock %}
 

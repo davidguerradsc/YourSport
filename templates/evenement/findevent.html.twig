@@ -1,9 +1,7 @@
 {% extends "layout.html.twig" %}
 
 {% block title %}
-
-    Liste des événements
-
+    YourSport - Liste des événements
 {% endblock %}
 
 {% block content %}
@@ -17,11 +15,14 @@
 
         <div class="row">
 
+            {# BOUCLE D'AFFICHAGE DE TOUS LES EVENEMENTS #}
+
             {% for evenement in evenements %}
 
                 <div class="col-4 col-12-narrower">
 
                     <section class="box special">
+
                     <span class="image featured"><img src="{{ asset('images/' ~ evenement.sport.image) }}"
                                                       alt="{{ evenement.titre }}"/></span>
 
@@ -39,17 +40,20 @@
                                     'id'        : evenement.id
                                 }) }}" class="button alt">Voir plus</a></li>
                         </ul>
-                    </section>
 
-                </div>
+                    </section> <!-- ./box special -->
+
+                </div> <!-- ./col-4 -->
 
             {% endfor %}
 
-        </div>
+            {# FIN BOUCLE #}
+
+        </div> <!-- ./row -->
 
         <p style="text-align: center;"><a href="#main">Retour en haut de page</a></p>
 
-    </section>
+    </section> <!-- ./main-->
 
 {% endblock %}
 
