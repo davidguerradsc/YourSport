@@ -307,7 +307,7 @@ class Membre implements UserInterface
      */
     public function getRoles()
     {
-        return ['ROLE_MEMBRE'];
+        return ['ROLE_ADMIN'];
     }
 
     /**

@@ -1,0 +1,29 @@
+{% extends "layoutError.html.twig" %}
+
+{% block title %}
+    YourSport - Accueil
+{% endblock %}
+
+
+{% block content %}
+
+
+    <!-- Main -->
+    <section id="main" class="container">
+
+        <section class="box special">
+            <header class="major">
+                <h3>Oups, une erreur est survenue !</h3>
+                <p>
+                    Il semble y avoir un problème.</br>
+                    La page que vous recherchez semble ne pas fonctionner! </br>
+                    Vous pouvez revenir <a href="{{ path('accueil') }}"> à la page d'accueil</a>,
+                    Où bien <a href="{{ path('contact_contact') }}">nous envoyer un message</a>  en expliquant le problème.</br>
+                    Nous nous efforcerons de résoudre le problème dans les plus brefs délais.</br>
+                </p>
+            </header>
+        </section>
+
+    </section>
+
+{% endblock %}

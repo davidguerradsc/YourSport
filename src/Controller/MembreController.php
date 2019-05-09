@@ -4,12 +4,14 @@
 namespace App\Controller;
 
 
+use App\Entity\Evenement;
 use App\Entity\Membre;
 use App\Form\ConnexionFormType;
 use App\Form\MembreFormType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Entity;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
@@ -85,6 +87,38 @@ MembreController extends AbstractController
      */
     public function deconnexion()
     {
+    }
+
+    /**
+     * Supprimer de son compte membre
+     * @Route("/deleteAccount/{id}.html", name="membre_deleteMembre")
+     */
+    public function deleteMembre($id)
+    {
+
+        $currentUserId = $this->getUser()->getId();
+        if ($currentUserId == $id)
+        {
+            $session = $this->get('session');
+            $session = new Session();
+            $session->invalidate();
+        }
+
+        $membre = $this->getUser();
+
+        $evenements = $membre->getEvenements();
+
+        $em = $this->getDoctrine()->getManager();
+        foreach ($evenements as $evenement){
+            $em->remove($evenement);
+            $em->flush();
+        }
+
+
+        $em->remove($membre);
+        $em->flush();
+
+        return $this->redirectToRoute('accueil');
     }
 
 }

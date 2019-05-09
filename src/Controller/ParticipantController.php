@@ -35,7 +35,7 @@ class ParticipantController extends AbstractController
 
     /**
      * Fonction permettant de quitter un événement.
-     * @Route("/desinscrire/{id].html", name="evenement_leaveEvent")
+     * @Route("/desinscrire/{id}.html", name="evenement_leaveEvent")
      * @param Evenement $evenement
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
