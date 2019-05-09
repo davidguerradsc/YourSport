@@ -1,0 +1,56 @@
+<!-- Header -->
+<header id="header" class="alt">
+
+    <h1><a href="{{ path('accueil') }}">YourSport</a></h1>
+
+
+    <nav id="nav">
+        <ul>
+            <li><a href="{{ path('accueil') }}">Accueil</a></li>
+
+            <li><a href="{{ path('evenement_list') }}">Trouver Evénement</a></li>
+
+            <li>
+                <a href="#" class="icon fa-angle-down">Sports</a>
+                <ul>
+                    {% for sports in sports %}
+                        <li><a href="{{ path('default_listsport',{
+                                'slug' : sports.slug
+                            }) }}">{{ sports.nom }}</a></li>
+                    {% endfor %}
+                </ul>
+            </li>
+
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <li>
+                    <a href="#" class="icon fa-angle-down">Profil</a>
+                    <ul>
+                        <li><a href="{{ path('membre_viewProfil') }}">Voir Profil</a></li>
+                        <li><a href="{{ path('evenement_createEvenement') }}">Créer Evénement</a></li>
+                        <li><a href="{{ path('evenement_eventByMember') }}">Mes événements</a></li>
+                    </ul>
+                </li>
+            {% endif %}
+
+            <li><a href="{{ path('contact_contact') }}">Contact</a></li>
+
+        </ul>
+    </nav>
+</header>
+
+<!-- Banner -->
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <section id="banner">
+        <h2>YOURSPORT</h2>
+        <h3>
+            Désolé,&nbsp; {{ app.user.pseudo| capitalize }} !
+        </h3>
+
+{% else %}
+    <section id="banner">
+        <h2>YOURSPORT</h2>
+
+        <p>Live Your Sport !</p>
+
+    </section>
+{% endif %}
