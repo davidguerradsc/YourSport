@@ -2658,7 +2658,7 @@ body.landing #page-wrapper {
 #banner {
     background-attachment: scroll, fixed;
     background-color: #666;
-    background-image: url("../images/Background-Test.jpg"), url("../images/Background-Test.webp");
+    background-image: url("images/Background-Test.webp"), url("../../images/Background-Test.webp");
     background-position: top left, center center;
     background-repeat: repeat, no-repeat;
     background-size: auto, cover;
@@ -3503,7 +3503,7 @@ i.wi {
     text-align: center;
 }
 
-fb-comments {
+.fb-comments {
     width: 100%;
 }
 

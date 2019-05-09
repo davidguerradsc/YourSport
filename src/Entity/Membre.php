@@ -331,10 +331,6 @@ class Membre implements UserInterface
         return $this->email;
     }
 
-    public function __toString()
-    {
-        return $this->date_de_naissance;
-    }
 
     /**
      * Removes sensitive data from the user.

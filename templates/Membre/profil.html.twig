@@ -61,9 +61,11 @@
                     <p class="editprofil">{{ app.user.email }} </p>
                 </div>
 
-                {#<div class="col-12" style="margin: 18px">#}
-                {#<h4><i class="fas fa-arrow-right"></i> <a href="/">Me désinscrire</a></h4>#}
-                {#</div>#}
+                <div class="col-12" style="margin: 18px">
+                    <h4><i class="fas fa-arrow-right"></i> <a
+                                onclick="return confirm('Voulez vraiment supprimer votre compte ?')"
+                                href="{{ path('membre_deleteMembre', {'id' : app.user.id  }) }}">Me désinscrire</a></h4>
+                </div>
 
                 {#<div class="col-12">#}
                 {#<h4><em>Date de Naissance</em></h4>#}
