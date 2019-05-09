@@ -306,7 +306,7 @@ class Membre implements UserInterface
      */
     public function getRoles()
     {
-        return ['ROLE_MEMBRE'];
+        return ['ROLE_ADMIN'];
     }
 
     /**
@@ -330,7 +330,6 @@ class Membre implements UserInterface
     {
         return $this->email;
     }
-
 
     /**
      * Removes sensitive data from the user.
