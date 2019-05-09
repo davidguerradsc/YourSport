@@ -55,15 +55,14 @@
                             </li>
                         </ul>
 
-                        {#<ul class="actions special">#}
-                        {#<li>#}
-                        {#<a href="{{ path('evenement_leaveEvent') }}"#}
-                        {#class="button alt">#}
-                        {#Se désinscrire#}
-                        {#</a>#}
-                        {#</li>#}
-                        {#</ul>#}
-                        {#</p>#}
+                        <ul class="actions special">
+                            <li>
+                                <a href="{{ path('evenement_leaveEvent', {'id' : evenement.id}) }}" class="button alt">
+                                    Se désinscrire
+                                </a>
+                            </li>
+                        </ul>
+                        </p>
 
 
                     {% else %}
@@ -98,27 +97,31 @@
 
                 {# AFFICHAGE DES PARTICIPANTS DANS UN TABLEAU #}
 
-                <h4>Liste des Participants :</h4>
+                {% if evenement.participant is not empty %}
 
-                <table>
+                    <h4>Liste des Participants :</h4>
 
-                    <tr class="entete">
-                        <td class="impaire">Prénom</td>
-                        <td class="paire">Pseudo</td>
-                        <td class="impaire">Ville</td>
-                        <td class="paire">Date de naissance</td>
-                    </tr>
+                    <table>
 
-                    {% for participant in evenement.participant %}
-                        <tr>
-                            <td class="impaire">{{ participant.prenom }}</td>
-                            <td class="paire">{{ participant.pseudo }}</td>
-                            <td class="impaire">{{ participant.ville }}</td>
-                            <td class="paire">{{ participant.DateDeNaissance | date('d/m/Y') }}</td>
+                        <tr class="entete">
+                            <td class="impaire">Prénom</td>
+                            <td class="paire">Pseudo</td>
+                            <td class="impaire">Ville</td>
+                            <td class="paire">Date de naissance</td>
                         </tr>
-                    {% endfor %}
 
-                </table>
+                        {% for participant in evenement.participant %}
+                            <tr>
+                                <td class="impaire">{{ participant.prenom }}</td>
+                                <td class="paire">{{ participant.pseudo }}</td>
+                                <td class="impaire">{{ participant.ville }}</td>
+                                <td class="paire">{{ participant.DateDeNaissance | date('d/m/Y') }}</td>
+                            </tr>
+                        {% endfor %}
+
+                    </table>
+
+                {% endif %}
 
                 {# FIN TABLEAU #}
 
