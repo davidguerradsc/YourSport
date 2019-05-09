@@ -111,6 +111,7 @@ class Membre implements UserInterface
      */
     private $participation;
 
+
     public function __construct()
     {
         $this->evenements = new ArrayCollection();
@@ -330,6 +331,7 @@ class Membre implements UserInterface
     {
         return $this->email;
     }
+    
 
     /**
      * Removes sensitive data from the user.
@@ -340,4 +342,5 @@ class Membre implements UserInterface
     public function eraseCredentials()
     {
     }
+
 }

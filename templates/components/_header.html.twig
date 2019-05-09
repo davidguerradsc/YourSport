@@ -48,6 +48,16 @@
 
             <li><a href="{{ path('contact_contact') }}">Contact</a></li>
 
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <li>
+                        <a href="#" class="icon fa-angle-down">Profil</a>
+                        <ul>
+                            <li><a href="{{ path('membre_viewProfil') }}">Voir Profil</a></li>
+                            <li><a href="{{ path('evenement_createEvenement') }}">Créer Evénement</a></li>
+                            <li><a href="{{ path('evenement_eventByMember') }}">Mes événements</a></li>
+                        </ul>
+                    </li>
+                {% endif %}
 
             <!--<li><a href="#" class="button">Connexion</a></li>-->
         </ul>

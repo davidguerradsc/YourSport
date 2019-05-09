@@ -125,7 +125,7 @@ class EvenementController extends AbstractController
 
 
     /**
-     * Recupérer les événements triés par membre
+     * Recupérer les événements trié par membre
      * @Route("/my-events",
      *     name="evenement_eventByMember")
      */
