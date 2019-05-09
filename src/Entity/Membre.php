@@ -306,7 +306,7 @@ class Membre implements UserInterface
      */
     public function getRoles()
     {
-        return ['ROLE_MEMBRE'];
+        return ['ROLE_ADMIN'];
     }
 
     /**
@@ -329,11 +329,6 @@ class Membre implements UserInterface
     public function getUsername()
     {
         return $this->email;
-    }
-
-    public function __toString()
-    {
-        return $this->date_de_naissance;
     }
 
     /**
