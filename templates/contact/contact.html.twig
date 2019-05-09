@@ -1,7 +1,7 @@
 {% extends "layout.html.twig" %}
 
 {% block title %}
-   YourSport | Contact
+    YourSport - Contact
 {% endblock %}
 
 {% block content %}
@@ -12,9 +12,9 @@
             <h2>Contactez-Nous</h2>
         </header>
 
-        <!-- FORMULAIRE DE CONTACT -->
-
         <div class="box">
+
+            {# Message si le mail de contact à bien été envoyé #}
 
             {% for message in app.flashes('notice') %}
                 <div class="messageFlash">
@@ -22,6 +22,7 @@
                 </div>
             {% endfor %}
 
+            {# FORMULAIRE DE CONTACT#}
 
             {{ form_start(form, { attr: {novalidate: 'novalidate' }} ) }}
 
@@ -56,9 +57,11 @@
 
             {{ form_end(form) }}
 
+            {# FIN FORMULAIRE #}
+
         </div> <!-- ./box -->
 
-    </section>
+    </section> <!-- ./main -->
 
 {% endblock %}
 

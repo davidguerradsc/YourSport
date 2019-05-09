@@ -1,7 +1,7 @@
 {% extends "layout.html.twig" %}
 
 {% block title %}
-    Mon Profil
+    YourSport - Mon Profil
 {% endblock %}
 
 {% block content %}
@@ -14,16 +14,21 @@
 
         <div class="box">
 
+            {# Message de reussite pour profil édité #}
+
             {% for message in app.flashes('notice') %}
                 <div class="messageFlash">
                     {{ message }}
                 </div>
             {% endfor %}
 
+            {# AFFICHAGE DES INFORMATIONS DE PROFIL #}
+
             <div class="row">
 
                 <div class="col-12">
-                    <p><i class="fas fa-arrow-right"></i>&nbsp;<a href="{{ path('membre_editProfil') }}">Editer votre profil <i class="far fa-edit"></i></a></p>
+                    <p><i class="fas fa-arrow-right"></i>&nbsp;<a href="{{ path('membre_editProfil') }}">Editer votre
+                            profil <i class="far fa-edit"></i></a></p>
                 </div>
 
                 <div class="col-6 col-12-narrower">
@@ -56,14 +61,9 @@
                     <p class="editprofil">{{ app.user.email }} </p>
                 </div>
 
-                <div class="col-12">
-                    <h4><em>Mot de passe :</em></h4>
-                    <p class="editprofil">{{ app.user.password }} </p>
-                </div>
-
-                <div class="col-12" style="margin: 18px">
-                    <h4><i class="fas fa-arrow-right"></i> <a href="/">Me désinscrire</a></h4>
-                </div>
+                {#<div class="col-12" style="margin: 18px">#}
+                {#<h4><i class="fas fa-arrow-right"></i> <a href="/">Me désinscrire</a></h4>#}
+                {#</div>#}
 
                 {#<div class="col-12">#}
                 {#<h4><em>Date de Naissance</em></h4>#}
@@ -79,8 +79,10 @@
 
             </div> <!-- ./row -->
 
+            {# FIN D'AFFICHAGE PROFIL #}
+
         </div> <!-- ./box -->
 
-    </section>
+    </section> <!-- ./main -->
 
 {% endblock %}

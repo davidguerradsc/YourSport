@@ -1,7 +1,7 @@
 {% extends "layout.html.twig" %}
 
 {% block title %}
-   Connexion
+    YourSport - Connexion
 {% endblock %}
 
 {% block content %}
@@ -13,15 +13,24 @@
 
         <div class="box">
 
+
+            {# Message en cas d'erreur de connexion #}
+
             {% if error %}
-                <div class="messageFlashRed">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                <div class="messageFlashRed">{{ error.messageKey|trans(error.messageData, 'security')| replace({"Invalid credentials." : "Votre mot de passe ou email est invalide, veuillez réessayer."}) }}</div>
             {% endif %}
+
+
+            {# Message si inscription réussie #}
 
             {% for message in app.flashes('notice') %}
                 <div class="messageFlash">
                     {{ message }}
                 </div>
             {% endfor %}
+
+
+            {# Formulaire de connexion #}
 
             {{ form_start(form, { attr: {novalidate: 'novalidate' }} ) }}
 
@@ -41,13 +50,18 @@
                     </ul>
                 </div>
 
-                <p>Si vous n'êtes pas inscrit <i class="fas fa-arrow-right"></i> <a href="/inscription.html">Inscrivez-vous ici.</a></p>
+                <p>Si vous n'êtes pas inscrit <i class="fas fa-arrow-right"></i> <a href="/inscription.html">Inscrivez-vous
+                        ici.</a></p>
 
             </div> <!-- ./gtr-50 -->
 
             {{ form_end(form) }}
 
+            {# Fin du formulaire #}
+
+
         </div> <!-- ./box -->
 
-    </section>
+    </section> <!-- ./main -->
+
 {% endblock %}
