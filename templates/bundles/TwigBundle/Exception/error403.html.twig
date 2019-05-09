@@ -1,0 +1,29 @@
+{% extends "layoutError.html.twig" %}
+
+{% block title %}
+    YourSport - {{ status_code }} : {{ status_text }}
+{% endblock %}
+
+
+{% block content %}
+
+
+    <!-- Main -->
+    <section id="main" class="container">
+
+        <section class="box special">
+            <header class="major">
+                <h2>Oups, la page ne s'affiche pas !</h2>
+                </br>
+                <h3>Vous n'êtes pas autorisé à acceder à cette page !</h3>
+                <p>
+                    Vous pouvez revenir : <a href="{{ path('accueil') }}"> à la page d'accueil</a>,
+                    où bien <a href="{{ path('contact_contact') }}">envoyez nous un message</a>  en expliquant le problème.</br>
+                    Nous nous efforcerons de résoudre le problème dans les plus brefs délais.
+                </p>
+            </header>
+        </section>
+
+    </section>
+
+{% endblock %}
