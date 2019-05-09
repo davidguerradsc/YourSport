@@ -3141,7 +3141,7 @@ body.landing #page-wrapper {
 #banner {
     background-attachment: scroll, fixed;
     background-color: #666;
-    background-image: url("images/Background-Test.jpg"), url("../../images/Background-Test.webp");
+    background-image: url(""), url("../../images/Background-Test.jpg");
     background-position: top left, center center;
     background-repeat: repeat, no-repeat;
     background-size: auto, cover;
@@ -4133,5 +4133,29 @@ fb-comments{
 
 .impaire{
     background: #C0C0C0;
+}
+/*logo*/
+.logo{
+    width: 55%;
+}
+.containerlogo{
+    display: flex;
+    height: -webkit-fill-available;
+    padding: 3%;
+}
+.nom{
+    padding-left: 11.4rem;
+    font-size: 1.4em;
+    color: white;
+}
+@media screen and (max-width: 1280px) {
+    .nom{
+        padding-left: 9.2rem;
+        font-size: 1.5em;
+        color: white;
+    }
+    .logo{
+        width: 43%;
+    }
 }
 
