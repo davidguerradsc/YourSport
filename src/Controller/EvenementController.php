@@ -65,7 +65,7 @@ class EvenementController extends AbstractController
 
 
     /**
-     * Pour lister tous les evenements
+     * Pour lister tous les événements
      * @Route("/liste-des-evenements.html", name="evenement_list")
      */
     public function findEvent()
@@ -82,6 +82,7 @@ class EvenementController extends AbstractController
     }
 
     /**
+     * Lister les 4 derniers événements
      * @Route("/", name="evenement_latest")
      */
     public function findLatest()
@@ -124,7 +125,7 @@ class EvenementController extends AbstractController
 
 
     /**
-     * Recupérer les événements trié par membre
+     * Recupérer les événements triés par membre
      * @Route("/my-events",
      *     name="evenement_eventByMember")
      */

@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block content %}
+
     <section id="main" class="container">
 
         <header>
@@ -13,16 +14,20 @@
 
         <div class="row">
 
+            {# BOUCLE D'AFFICHAGE DES EVENEMENT PAR MEMBRE #}
+
             {% for evenement in evenements %}
                 <div class="col-4 col-12-narrower">
 
                     <section class="box special">
-                        <span class="image featured"><img src="{{ asset('images/' ~ evenement.sport.image) }}" alt="{{ evenement.titre }}" /></span>
+                        <span class="image featured"><img src="{{ asset('images/' ~ evenement.sport.image) }}"
+                                                          alt="{{ evenement.titre }}"/></span>
                         <h3>{{ evenement.titre }}</h3>
 
                         <p class="eventbox">{{ evenement.ville }}</p>
 
-                        <p class="eventbox">Le {{ evenement.date | date('d/m/Y')}} à {{ evenement.heure | date('H:i') }}</p>
+                        <p class="eventbox">Le {{ evenement.date | date('d/m/Y') }}
+                            à {{ evenement.heure | date('H:i') }}</p>
 
                         <ul class="actions special">
                             <li><a href="{{ path('evenement_evenement',{
@@ -31,16 +36,18 @@
                                     'id'        : evenement.id
                                 }) }}" class="button alt">Voir plus</a></li>
                         </ul>
-                    </section>
+                    </section> <!-- ./box special -->
 
-                </div>
+                </div> <!-- ./col-4 -->
 
             {% endfor %}
-        </div>
 
+            {# FIN BOUCLE #}
 
+        </div> <!-- ./row -->
 
-    </section>
+    </section> <!-- ./main -->
+
 {% endblock %}
 
 

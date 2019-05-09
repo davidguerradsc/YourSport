@@ -11,18 +11,23 @@
     <!-- Main -->
     <section id="main" class="container">
 
+        {# Courte présentation du rôle du site #}
+
         <section class="box special">
             <header class="major">
-                <h2>Création d'événements sportifs
+                <h2>Premier réseau social sportif,YourSport vous permet
                     <br/>
-                    dans un cadre non convetionel! ...</h2>
-                <p>Blandit varius ut praesent nascetur eu penatibus nisi risus faucibus nunc ornare<br/>
-                    adipiscing nunc adipiscing. Condimentum turpis massa.</p>
+                    de créer et rejoindre toutes sortes d'événement sportifs !
+                    </h2>
+                <p>Partager des superbes moments avec des gens qui ont la même passion que vous !</p>
             </header>
-        </section>
+        </section> <!-- ./box special-->
 
 
         <div class="row">
+
+            {# BOUCLE D'AFFICHAGE DES 4 DERNIERS EVENEMENT #}
+
             {% for lastevent in lastevents %}
                 <div class="col-6 col-12-narrower">
 
@@ -45,12 +50,16 @@
                         </ul>
                     </section>
 
-                </div>
+                </div> <!-- ./col-6 -->
+
             {% endfor %}
 
-        </div>
+            {# FIN DE LA BOUCLE #}
+
+        </div> <!-- ./row -->
 
 
+        {# AFFICHAGE METEO #}
 
         <!-- Widget Météo -->
 
@@ -101,7 +110,6 @@
 
         </section><!-- End widget -->
 
-    </section>
-
+    </section> <!-- ./main -->
 
 {% endblock %}

@@ -4120,3 +4120,18 @@ fb-comments{
     text-align: center;
     margin: 0.3rem 0 0 0;
 }
+
+/* TABLEAU PARTICIPANTS*/
+
+.entete{
+    border-bottom:rgba(158,158,158,0.7) solid 1px;
+}
+
+.paire{
+    background: #DCDCDC;
+}
+
+.impaire{
+    background: #C0C0C0;
+}
+
