@@ -8,6 +8,11 @@
 
     <nav id="nav">
         <ul>
+
+            {% if is_granted('ROLE_ADMIN') %}
+                <li><a href="{{ path('easyadmin') }}">Plateforme Admin</a></li>
+            {% endif %}
+
             <li><a href="{{ path('accueil') }}">Accueil</a></li>
 
             <li><a href="{{ path('evenement_list') }}">Trouver Evénement</a></li>
