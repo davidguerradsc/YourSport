@@ -111,6 +111,11 @@ class Membre implements UserInterface
      */
     private $participation;
 
+    /**
+     * @ORM\Column(type="array")
+     */
+    private $roles = [];
+
     public function __construct()
     {
         $this->evenements = new ArrayCollection();
@@ -306,7 +311,7 @@ class Membre implements UserInterface
      */
     public function getRoles()
     {
-        return ['ROLE_MEMBRE'];
+        return $this->roles;
     }
 
     /**
@@ -339,6 +344,13 @@ class Membre implements UserInterface
      */
     public function eraseCredentials()
     {
+    }
+
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
+
+        return $this;
     }
 
 }

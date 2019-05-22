@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20190506095832 extends AbstractMigration
+final class Version20190510082422 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -22,7 +22,7 @@ final class Version20190506095832 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE sports ADD image VARCHAR(255) NOT NULL');
+        $this->addSql('ALTER TABLE membre ADD roles LONGTEXT NOT NULL COMMENT \'(DC2Type:array)\'');
     }
 
     public function down(Schema $schema) : void
@@ -30,6 +30,6 @@ final class Version20190506095832 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE sports DROP image');
+        $this->addSql('ALTER TABLE membre DROP roles');
     }
 }
