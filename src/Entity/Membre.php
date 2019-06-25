@@ -309,13 +309,20 @@ class Membre implements UserInterface
      *
      * @return (Role|string)[] The user roles
      */
-    public function getRoles(): array
+    public function getRoles()//: array
     {
+
+
+        return ['ROLE_ADMIN'];
+
+
+     /*
         $roles = $this->roles;
         // afin de garantir que tout les membres sont user
         $roles[] = 'ROLE_USER';
 
         return $this->roles;
+     */
     }
 
     /**
