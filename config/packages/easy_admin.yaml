@@ -37,3 +37,4 @@ easy_admin:
                     - {property: 'password'}
                     - {property: 'ville'}
                     - {property: 'departement'}
+                    - {property: 'roles'}
