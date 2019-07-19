@@ -28,25 +28,25 @@ async function main(withIP = true){
 
   if(withIP){
 
-// 1. Récupération de l'adresse Ip grâce à l'api ipify.
+    // 1. Récupération de l'adresse Ip grâce à l'api ipify.
 
-const ip = await fetch('https://api.ipify.org?format=json')
- .then(resultat => resultat.json())
- .then(json     =>  json.ip)
-
-
-// 2. Récuperer la ville grâce à l'adresse IP:
-
-   ville = await fetch('http://api.ipstack.com/' + ip + '?access_key=f8235302669e9034b6acfea7bf969128&lang=fr')
-  .then(resultat => resultat.json())
-  .then(json     => json.city)
+    const ip = await fetch('https://api.ipify.org?format=json')
+     .then(resultat => resultat.json())
+     .then(json     =>  json.ip)
 
 
-  // 2-Bis. Récupération de la région administratve.
+    // 2. Récuperer la ville grâce à l'adresse IP:
 
-/*const region = await fetch('http://api.ipstack.com/' + ip + '?access_key=f8235302669e9034b6acfea7bf969128&lang=fr')
-  .then(resultat => resultat.json())
-  .then(json     => json.region_name)*/
+       ville = await fetch('http://api.ipstack.com/' + ip + '?access_key=f8235302669e9034b6acfea7bf969128&lang=fr')
+      .then(resultat => resultat.json())
+      .then(json     => json.city)
+
+
+      // 2-Bis. Récupération de la région administratve.
+
+    /*const region = await fetch('http://api.ipstack.com/' + ip + '?access_key=f8235302669e9034b6acfea7bf969128&lang=fr')
+      .then(resultat => resultat.json())
+      .then(json     => json.region_name)*/
 
 
   } else {
@@ -198,6 +198,6 @@ ville.addEventListener('keydown', (e) => {
     ville.contentEditable = false;
     main(false);
   }
-})
+});
 
 main();

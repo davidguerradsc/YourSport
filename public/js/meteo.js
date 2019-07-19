@@ -81,44 +81,34 @@ function displayWeatherInfos(data){
 
 //.Données du deuxieme jour.
 
-    const txt1         = data.list[3].dt_txt;
-    const conditions1  = data.list[3].weather[0].main;
-    const temperature1 = data.list[3].main.temp;
-    const description1 = data.list[3].weather[0].description;
-    let   vent1        = data.list[3].wind.speed;
-    let   direction1   = data.list[3].wind.deg;
+    const txt1         = data.list[8].dt_txt;
+    const conditions1  = data.list[8].weather[0].main;
+    const temperature1 = data.list[8].main.temp;
+    const description1 = data.list[8].weather[0].description;
+    let   vent1        = data.list[8].wind.speed;
+    let   direction1   = data.list[8].wind.deg;
 
 
 //.Données du troisiéme jour.
 
-    const txt2         = data.list[10].dt_txt;
-    const conditions2  = data.list[10].weather[0].main;
-    const temperature2 = data.list[10].main.temp;
-    const description2 = data.list[10].weather[0].description;
-    let   vent2        = data.list[10].wind.speed;
-    let   direction2   = data.list[10].wind.deg;
+    const txt2         = data.list[16].dt_txt;
+    const conditions2  = data.list[16].weather[0].main;
+    const temperature2 = data.list[16].main.temp;
+    const description2 = data.list[16].weather[0].description;
+    let   vent2        = data.list[16].wind.speed;
+    let   direction2   = data.list[16].wind.deg;
 
 
 
 //.Données du quatriéme jour.
 
-    const txt3         = data.list[15].dt_txt;
-    const conditions3  = data.list[15].weather[0].main;
-    const temperature3 = data.list[15].main.temp;
-    const description3 = data.list[15].weather[0].description;
-    let   vent3        = data.list[15].wind.speed;
-    let   direction3   = data.list[15].wind.deg;
+    const txt3         = data.list[24].dt_txt;
+    const conditions3  = data.list[24].weather[0].main;
+    const temperature3 = data.list[24].main.temp;
+    const description3 = data.list[24].weather[0].description;
+    let   vent3        = data.list[24].wind.speed;
+    let   direction3   = data.list[24].wind.deg;
 
-
-
-//.Données du cinquiéme jour.
-
-   // const txt4         = data.list[26].dt_txt;
-   // const conditions4  = data.list[26].weather[0].main;
-   // const temperature4 = data.list[26].main.temp;
-   // const description4 = data.list[26].weather[0].description;
-   // let   vent4        = data.list[26].wind.speed;
-   // let   direction4   = data.list[26].wind.deg;
 
 
 
@@ -230,6 +220,7 @@ document.querySelector('#temperature').textContent  = Math.round(temperature0);
 document.querySelector('#vent').textContent         = Math.round(vent0);
 document.querySelector('#direction').textContent    = direction0;
 
+
 //.Affichage du deuxieme jour.
 
 document.querySelector('#txt1').textContent          = txt1;
@@ -239,8 +230,8 @@ document.querySelector('#temperature1').textContent  = Math.round(temperature1);
 document.querySelector('#vent1').textContent         = Math.round(vent1);
 document.querySelector('#direction1').textContent    = direction1;
 
-//.Affichage du troisiéme jour.
 
+//.Affichage du troisiéme jour.
 
 document.querySelector('#txt2').textContent          = txt2;
 document.querySelector('#description2').textContent  = capitalize(description2)
@@ -252,22 +243,12 @@ document.querySelector('#direction2').textContent    = direction2;
 
 //.Affichage du quatriéme jour.
 
-
 document.querySelector('#txt3').textContent          = txt3;
 document.querySelector('#description3').textContent  = capitalize(description3)
 //document.querySelector('#conditions').textContent   = conditions;
 document.querySelector('#temperature3').textContent  = Math.round(temperature3);
 document.querySelector('#vent3').textContent         = Math.round(vent3);
 document.querySelector('#direction3').textContent    = direction3;
-
-//.Affichage du cinquiéme jour.
-
-/*document.querySelector('#txt4').textContent          = txt4;
-document.querySelector('#description4').textContent  = capitalize(description4)
-//document.querySelector('#conditions').textContent   = conditions;
-document.querySelector('#temperature4').textContent  = Math.round(temperature4);
-document.querySelector('#vent4').textContent         = Math.round(vent2);
-document.querySelector('#direction4').textContent    = direction4;*/
 
 
 // Affichage de l'icône WeatherIcones en fonction des conditions météo.
@@ -289,12 +270,7 @@ document.querySelector('i.wi3').className = weatherIcons [conditions3];
      document.getElementById('jour3').className = conditions3.toLowerCase();
     // document.getElementById('jour4').className = conditions4.toLowerCase()
 
-
-
 }
-
-
-
 
 
 main();
