@@ -1,5 +1,5 @@
 easy_admin:
-    site_name: 'YourSport <em>Administration</em>'
+    site_name: 'YourSport <em>Admin</em>'
     user:
         display_name: true
     entities:
@@ -17,8 +17,6 @@ easy_admin:
                     - {property: 'details'}
                     - {property: 'date'}
                     - {property: 'heure'}
-                    - {property: 'membre.pseudo'}
-
         Sports:
             list:
                 title: "Sports"

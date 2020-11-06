@@ -26,13 +26,17 @@
 
 	<nav id="nav">
 		<ul>
+
 			<li>
 				<a href="{{ path('accueil') }}">Accueil</a>
 			</li>
+
 			<li>
-				<a href="{{ path('evenement_list') }}">Evénements</a>
+				<a href="{{ path('evenement_list') }}">Trouver Evénement</a>
 			</li>
+
 			<li>
+
 				<a href="#" class="icon fa-angle-down">Sports</a>
 				<ul>
 					{% for sports in sports %}
@@ -59,6 +63,8 @@
 			<li>
 				<a href="{{ path('contact_contact') }}">Contact</a>
 			</li>
+
+			<!--<li><a href="#" class="button">Connexion</a></li>-->
 		</ul>
 	</nav>
 

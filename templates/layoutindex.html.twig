@@ -2,6 +2,7 @@
 
 {% set sports = sports_repository.findAll() %}
 
+
 {% block stylesheets %}
 
     <!-- Main CSS -->
@@ -12,13 +13,17 @@
           integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <!-- Weather Icons -->
+
     <link rel="stylesheet"  href="http://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css">
 
     <!-- GOOGLE FONT -->
+
     <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+
 {% endblock %}
 
 {% block body %}
+
     <body class="landing is-preload">
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v3.3"></script>
@@ -32,11 +37,13 @@
 
     </div>
     </body>
+
 {% endblock %}
 
 {% block javascript %}
 
 <!-- Scripts -->
+
     <script src = "{{ asset('js/jquery.min.js') }}"></script>
     <script src = "{{ asset('js/jquery.dropotron.min.js') }}"></script>
     <script src = "{{ asset('js/jquery.scrollex.min.js') }}"></script>
@@ -46,6 +53,7 @@
     <script src = "{{ asset('js/main.js') }}"></script>
     <script src = "{{ asset('js/app.js') }}"></script>
     
+
 {% endblock %}
 
 
