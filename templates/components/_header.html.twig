@@ -1,69 +1,84 @@
-
 {# HEADER PAGE AUTRE #}
 
 <!-- Header -->
-<header id="header">
+	<header
+	id="header"> {# Condition pour affichage de l'utilisateur connecté #}
 
-    {# Condition pour affichage de l'utilisateur connecté #}
+	{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+		<h1>
+			<a class="containerlogo" href="{{ path('accueil') }}">
+				<img class="logo" src="{{ asset('images/logo2.png') }}">
+				&nbsp;
+			</a>
+		</h1>
+		<a class="nom">
+			{{ app.user.prenom |capitalize }}
+			{{ app.user.nom| capitalize }}
+		</a>
+	{% else %}
+		<h1>
+			<a class="containerlogo" href="{{ path('accueil') }}"><img class="logo" src="{{ asset('images/logo2.png') }}">
+			</a>
+		</h1>
+	{% endif %}
 
-    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-        <h1><a class="containerlogo" href="{{ path('accueil') }}"><img class="logo" src="{{ asset('images/logo2.png') }}">
-                &nbsp; </a></h1><a class="nom"> {{ app.user.prenom |capitalize }} {{ app.user.nom| capitalize }}</a>
-    {% else %}
-        <h1><a class="containerlogo" href="{{ path('accueil') }}"><img class="logo" src="{{ asset('images/logo2.png') }}"> </a></h1>
-    {% endif %}
+	{# BARRE DE NAVIGATION - PAGE AUTRE #}
 
-    {# BARRE DE NAVIGATION - PAGE AUTRE #}
+	<nav id="nav">
+		<ul>
 
-    <nav id="nav">
-        <ul>
+			<li>
+				<a href="{{ path('accueil') }}">Accueil</a>
+			</li>
 
-            <li><a href="{{ path('accueil') }}">Accueil</a></li>
+			<li>
+				<a href="{{ path('evenement_list') }}">Trouver Evénement</a>
+			</li>
 
-            <li><a href="{{ path('evenement_list') }}">Trouver Evénement</a></li>
+			<li>
 
-            <li>
+				<a href="#" class="icon fa-angle-down">Sports</a>
+				<ul>
+					{% for sports in sports %}
+						<li>
+							<a href="{{ path('default_listsport',{ 'slug' : sports.slug }) }}">{{ sports.nom }}</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</li>
 
-                <a href="#" class="icon fa-angle-down">Sports</a>
-                <ul>
-                    {% for sports in sports %}
-                        <li><a href="{{ path('default_listsport',{
-                                'slug' : sports.slug
-                            }) }}">{{ sports.nom }}</a></li>
-                    {% endfor %}
-                </ul>
-            </li>
+			{# Condition d'être connecté pour un affichage des fonctions utilisateurs #}
 
-            {# Condition d'être connecté pour un affichage des fonctions utilisateurs #}
+			{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+				<li>
+					<a href="#" class="icon fa-angle-down">Profil</a>
+					<ul>
+						<li><ahref="{{path('membre_viewProfil')}}">Voir Profil</a></li>
+						<li><ahref="{{path('evenement_createEvenement')}}">Créer Evénement</a></li>
+						<li><ahref="{{path('evenement_eventByMember')}}">Mes événements</a></li>
+					</ul>
+				</li>
+			{% endif %}
 
-            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                <li>
-                    <a href="#" class="icon fa-angle-down">Profil</a>
-                    <ul>
-                        <li><a href="{{ path('membre_viewProfil') }}">Voir Profil</a></li>
-                        <li><a href="{{ path('evenement_createEvenement') }}">Créer Evénement</a></li>
-                        <li><a href="{{ path('evenement_eventByMember') }}">Mes événements</a></li>
-                    </ul>
-                </li>
-            {% endif %}
+			<li>
+				<a href="{{ path('contact_contact') }}">Contact</a>
+			</li>
 
-            <li><a href="{{ path('contact_contact') }}">Contact</a></li>
+			{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+				<li>
+					<a href="#" class="icon fa-angle-down">Profil</a>
+					<ul>
+						<li><ahref="{{path('membre_viewProfil')}}">Voir Profil</a></li>
+						<li><ahref="{{path('evenement_createEvenement')}}">Créer Evénement</a></li>
+						<li><ahref="{{path('evenement_eventByMember')}}">Mes événements</a></li>
+					</ul>
+				</li>
+			{% endif %}
 
-                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                    <li>
-                        <a href="#" class="icon fa-angle-down">Profil</a>
-                        <ul>
-                            <li><a href="{{ path('membre_viewProfil') }}">Voir Profil</a></li>
-                            <li><a href="{{ path('evenement_createEvenement') }}">Créer Evénement</a></li>
-                            <li><a href="{{ path('evenement_eventByMember') }}">Mes événements</a></li>
-                        </ul>
-                    </li>
-                {% endif %}
+			<!--<li><a href="#" class="button">Connexion</a></li>-->
+		</ul>
+	</nav>
 
-            <!--<li><a href="#" class="button">Connexion</a></li>-->
-        </ul>
-    </nav>
-
-    {# FIN BARRE DE NAVIGATION #}
+	{# FIN BARRE DE NAVIGATION #}
 
 </header>

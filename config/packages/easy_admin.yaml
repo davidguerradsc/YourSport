@@ -1,5 +1,7 @@
 easy_admin:
     site_name: 'YourSport <em>Admin</em>'
+    user:
+        display_name: true
     entities:
         Evenement:
             list:

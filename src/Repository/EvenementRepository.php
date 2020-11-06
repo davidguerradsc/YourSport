@@ -42,7 +42,7 @@ class EvenementRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('a')
             ->orderBy('a.id', 'desc')
-            ->setMaxResults(4)
+            ->setMaxResults(6)
             ->getQuery()
             ->getResult()
             ;

@@ -15,13 +15,6 @@
             <h2>{{ evenement.sport.nom }}</h2>
         </header>
 
-        {% for participant in evenement.participant %}
-
-            {{ dump(participant.prenom) }}
-
-        {% endfor %}
-
-
         <section class="box special">
             <header class="major">
 
@@ -83,10 +76,10 @@
                     {% endfor %}
 
                     <p>
-                    <ul class="actions special">
-                        <li><a href="{{ path('evenement_participer', { 'id' : evenement.id }) }}" class="button alt">Participer
-                                à l'événement</a></li>
-                    </ul>
+                        <ul class="actions special">
+                            <li><a href="{{ path('evenement_participer', { 'id' : evenement.id }) }}" class="button alt">Participer
+                                    à l'événement</a></li>
+                        </ul>
                     </p>
 
 

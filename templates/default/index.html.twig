@@ -4,16 +4,10 @@
     YourSport - Accueil
 {% endblock %}
 
-
 {% block content %}
-
-    {# {{ dump (app.user) }} #}
-
     <!-- Main -->
     <section id="main" class="container">
-
         {# Courte présentation du rôle du site #}
-
         <section class="box special">
             <header class="major">
                 <h2>Un site vous permettant de créer
@@ -23,25 +17,17 @@
                 <p>Partager des superbes moments avec des gens qui ont la même passion que vous !</p>
             </header>
         </section> <!-- ./box special-->
-
-
         <div class="row">
-
             {# BOUCLE D'AFFICHAGE DES 4 DERNIERS EVENEMENT #}
-
             {% for lastevent in lastevents %}
                 <div class="col-4 col-6-narrower">
-
                     <section class="box special">
                         <span class="image featured"><img src="{{ asset('images/' ~ lastevent.sport.image) }}"
                                                           alt="{{ lastevent.titre | summarize }}"/></span>
                         <h3>{{ lastevent.titre | summarize }}</h3>
-
                         <p class="eventbox">{{ lastevent.ville }}</p>
-
                         <p class="eventbox">Le {{ lastevent.date | date('d/m/Y') }}
                             à {{ lastevent.heure | date('H:i:s') }}</p>
-
                         <ul class="actions special">
                             <li><a href="{{ path('evenement_evenement',{
                                     'sports'    : lastevent.sport.slug,
@@ -50,67 +36,9 @@
                                 }) }}" class="button alt">Voir plus</a></li>
                         </ul>
                     </section>
-
                 </div> <!-- ./col-6 -->
-
             {% endfor %}
-
             {# FIN DE LA BOUCLE #}
-
         </div> <!-- ./row -->
-
-
-        {# AFFICHAGE METEO #}
-
-        <!-- Widget Météo -->
-
-        <section id="app">
-
-            <div id="meteo">
-
-                <!-- <div class="tooltip"> -->
-
-                <p style="margin: 0 0 0.5em 0;" class="info">
-                    Saisissez une ville de votre choix partout dans le monde ...
-                </p>
-
-                <h3 class="tool">
-
-                    <span id="ville"></span>
-
-                    <!--  <span class="tooltiptext">Saisissez une ville de votre choix partout dans le monde  ...</span> -->
-
-                </h3>
-
-                <!--    </div> End tooltip -->
-
-                <h3 class="weather">
-                    <span id="state"></span>,&nbsp;<span id="country"></span>
-                </h3>
-
-                <h3 class="weather">
-
-                    Longitude:&nbsp;<span id="longitude"></span>&nbsp; ; &nbsp; Latitude:&nbsp;<span
-                            id="latitude"></span>
-
-                </h3>
-
-                <i class="wi"></i>
-
-                <h3 class="weather">
-                    <span id="temperature" class="weather"></span> <span class="weather">C°</span><br/>
-                    (<span id="conditions"></span>)
-                </h3>
-
-                <h4 class="weather">
-                    Force du vent:&nbsp;<span id="vent"></span>&nbsp;Km/h&nbsp; - &nbsp;Direction:&nbsp;<span
-                            id="direction"></span>
-                </h4>
-
-            </div>
-
-        </section><!-- End widget -->
-
     </section> <!-- ./main -->
-
 {% endblock %}

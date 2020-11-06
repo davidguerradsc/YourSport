@@ -1,85 +1,68 @@
 {% extends "layout.html.twig" %}
 
 {% block title %}
-
-    Evénements - {{ sport.slug | capitalize }}
-
+	Evénements -
+	{{ sport.slug | capitalize }}
 {% endblock %}
 
 {% block content %}
+	<!-- Main -->
+	<section id="main" class="container">
+		<header>
+			<h2>Evénements -
+				{{ sport.nom }}</h2>
+		</header>
 
-    <!-- Main -->
-    <section id="main" class="container">
+		{% if evenements is not empty %}
 
-        <header>
-            <h2>Evénements - {{ sport.nom }}</h2>
-        </header>
+				{% if evenements is not empty %}
+					<section class="row">
+		
+        				{% for evenement in evenements %}
+							<div class="col-4 col-12-narrower">
+								<section class="box special">
+									<span class="image featured"><img src="{{ asset('images/' ~ evenement.sport.image) }}" alt="{{ evenement.titre }}"/></span>
+									<h3>{{ evenement.titre }}</h3>
+									<p class="eventbox">{{ evenement.ville }}</p>
+									<p class="eventbox">Le
+										{{ evenement.date | date('d/m/Y') }}
+										à
+										{{ evenement.heure | date('H:i') }}</p>
+									<ul class="actions special">
+										<li>
+											<a href="{{ path('evenement_evenement',{ 'sports' : evenement.sport.slug, 'slug' : evenement.slug, 'id' : evenement.id }) }}" class="button alt">Voir plus</a>
+										</li>
+									</ul>
+								</section>
+								<!-- ./box special -->
+							</div>
+							<!-- ./col-4 -->
+						{% endfor %}
 
-        {% if evenements is not empty %}
+					</section>
+					<!-- ./row -->
+					<p style="text-align: center;">
+						<a href="#main">Retour en haut de page</a>
+					</p>
+				{% else %}
 
-        <div class="row">
+					{# S'IL N'Y A PAS D'EVENEMENTS DE CREE DANS CE SPORT => MESSAGE D'INFO #}
+					<div class="messageFlashInfo">
+						<p>Il n'y a pas d'événement concernant ce sport pour l'instant.</p>
+					</div>
 
-        {% if evenements is not empty %}
+				{% endif %}
 
-            <div class="row">
+				{# FIN DE LA BOUCLE DES EVENEMENTS #}
 
-                {% for evenement in evenements %}
-                    <div class="col-4 col-12-narrower">
+			<!-- ./main -->
+		{% else %}
 
-                        <section class="box special">
+			<div class="messageFlashInfo">
+				<p>Il n'y a pas d'événement concernant ce sport pour l'instant.</p>
+			</div>
 
-                            <span class="image featured"><img src="{{ asset('images/' ~ evenement.sport.image) }}"
-                                                              alt="{{ evenement.titre }}"/></span>
-                            <h3>{{ evenement.titre }}</h3>
-
-                            <p class="eventbox">{{ evenement.ville }}</p>
-
-                            <p class="eventbox">Le {{ evenement.date | date('d/m/Y') }}
-                                à {{ evenement.heure | date('H:i') }}</p>
-
-                            <ul class="actions special">
-                                <li><a href="{{ path('evenement_evenement',{
-                                        'sports'    : evenement.sport.slug,
-                                        'slug'      : evenement.slug,
-                                        'id'        : evenement.id
-                                    }) }}" class="button alt">Voir plus</a></li>
-                            </ul>
-
-                        </section> <!-- ./box special -->
-
-                    </div> <!-- ./col-4 -->
-
-                {% endfor %}
-
-            </div> <!-- ./row -->
-
-            <p style="text-align: center;"><a href="#main">Retour en haut de page</a></p>
-
-        {% else %}
-
-            {# S'IL N'Y A PAS D'EVENEMENTS DE CREE DANS CE SPORT => MESSAGE D'INFO #}
-
-            <div class="messageFlashInfo">
-                <p>Il n'y a pas d'événement concernant ce sport pour l'instant.</p>
-            </div>
-
-        {% endif %}
-
-        {# FIN DE LA BOUCLE DES EVENEMENTS #}
-
-    </section> <!-- ./main -->
-
-        {% else %}
-
-        <div class="messageFlashInfo">
-            <p>Il n'y a pas d'événement concernant ce sport pour l'instant.</p>
-        </div>
-
-        {% endif %}
-
-
-    </section>
-
+		{% endif %}
+	</section>
 
 {% endblock %}
-
